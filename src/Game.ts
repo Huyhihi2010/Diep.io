@@ -35,6 +35,7 @@ import WebSocket = require("ws");
 import Teams4Arena from "./Gamemodes/Team4";
 import DominationArena from "./Gamemodes/Domination";
 import DominationBetaArena from "./Gamemodes/DominationBeta";
+import Domination4Arena from "./Gamemodes/Domination4Team";
 import TestingArena from "./Gamemodes/Misc/Testing";
 import SpikeboxArena from "./Gamemodes/Misc/Spikebox";
 import DominationTestingArena from "./Gamemodes/Misc/DomTest";
@@ -62,7 +63,7 @@ class WSSWriterStream extends Writer {
     }
 }
 
-type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "mot" | "dom" | "dum" | "maze" | "tag" | "survival" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
+type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "mot" | "dom" | "dum" | "dom4" | "maze" | "tag" | "survival" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
 
 const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> & { "*": typeof ArenaEntity }= {
     "ffa": FFAArena,
@@ -71,6 +72,7 @@ const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> 
     "sandbox": SandboxArena,
     "*": SandboxArena,
     "dom": DominationArena,
+    "dom4": Domination4Arena,
     "dum": DominationBetaArena,
     "survival": null,
     "tag": null,

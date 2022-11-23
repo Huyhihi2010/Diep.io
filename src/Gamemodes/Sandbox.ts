@@ -53,6 +53,7 @@ export default class SandboxArena extends ArenaEntity {
         super(game);
 	    
 	        new Dominator(this, new TeamBase(game, this, 0, 0, 900, 900, false));
+	        new Dominator(this, new TeamBase(game, this, 0, 0, 900, 900, false));
 
 		this.updateBounds(3500, 3500);
 

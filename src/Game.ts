@@ -28,7 +28,6 @@ import ArenaEntity, { ArenaState } from "./Native/Arena";
 import FFAArena from "./Gamemodes/FFA";
 import Teams2Arena from "./Gamemodes/Team2";
 import SandboxArena from "./Gamemodes/Sandbox";
-import team5Arena from "./Gamemodes/team5";
 
 import { ClientBound } from "./Const/Enums";
 import { IncomingMessage } from "http";
@@ -64,13 +63,12 @@ class WSSWriterStream extends Writer {
     }
 }
 
-type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "team5" | "mot" | "dom" | "dum" | "dom4" | "maze" | "tag" | "survival" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
+type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "mot" | "dom" | "dum" | "dom4" | "maze" | "tag" | "survival" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
 
 const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> & { "*": typeof ArenaEntity }= {
     "ffa": FFAArena,
     "teams": Teams2Arena,
     "4teams": Teams4Arena,
-    "team5": team5Arena,
     "sandbox": SandboxArena,
     "*": SandboxArena,
     "dom": DominationArena,

@@ -122,12 +122,12 @@ server.listen(PORT, () => {
     const jungle = new GameServer(wss, "jungle", "Jungle");
     const domtest = new GameServer(wss, "domtest", "DominationBAT");
     const teams = new GameServer(wss, "teams", "2Team");
-    const sbx2 = new GameServer(wss, "sandbox2", "Sandbox2")
+    const sbxb = new GameServer(wss, "sandboxBeta", "SandboxBeta");
     
     const dom4 = new GameServer(wss, "dom4", "4Domination");
 
     // games.push(test, ffa, sbx, maze, dom, duma, teams4, teams, domtest, jungle, factest, spike, ball);
-    games.push(ffa, dom, duma, dom4, teams4, teams, sbx, domtest, jungle, ball, sbx2);
+    games.push(ffa, dom, duma, dom4, teams4, teams, sbx, domtest, jungle, ball, sbxb);
 
     util.saveToLog("Servers up", "All servers booted up.", 0x37F554);
     util.log("Dumping endpoint -> gamemode routing table");

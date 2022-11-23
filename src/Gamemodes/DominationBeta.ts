@@ -67,6 +67,14 @@ export default class DominationArena extends ArenaEntity {
         new Dominator(this, new TeamBase(game, this, arenaSize / -5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
         
         new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / -5, domBaseSize, domBaseSize, false));
+        
+        new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / -5, domBaseSize, domBaseSize, false));
+        
+        new Dominator(this, new TeamBase(game, this, arenaSize / -5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
+        
+        new Dominator(this, new TeamBase(game, this, arenaSize / 5, arenaSize / 5, domBaseSize, domBaseSize, false));
+        
+        new Dominator(this, new TeamBase(game, this, arenaSize / -5, arenaSize / -5, domBaseSize, domBaseSize, false));
     }
 
     public spawnPlayer(tank: TankBody, client: Client) {

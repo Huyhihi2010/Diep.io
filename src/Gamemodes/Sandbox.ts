@@ -54,7 +54,7 @@ export default class SandboxArena extends ArenaEntity {
 	    
 	        new Dominator(this, new TeamBase(game, this, 0, 0, 900, 900, false));
 
-		this.updateBounds(2500, 2500);
+		this.updateBounds(3500, 3500);
 
 		// const w1 = new MazeWall(this.game, 0, 0, 500, 500);
     }

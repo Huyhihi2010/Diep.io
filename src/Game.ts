@@ -34,6 +34,7 @@ import { IncomingMessage } from "http";
 import WebSocket = require("ws");
 import Teams4Arena from "./Gamemodes/Team4";
 import DominationArena from "./Gamemodes/Domination";
+import DominationBetaArena from "./Gamemodes/DominationBeta";
 import TestingArena from "./Gamemodes/Misc/Testing";
 import SpikeboxArena from "./Gamemodes/Misc/Spikebox";
 import DominationTestingArena from "./Gamemodes/Misc/DomTest";
@@ -70,6 +71,7 @@ const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> 
     "sandbox": SandboxArena,
     "*": SandboxArena,
     "dom": DominationArena,
+    "dum": DominationBetaArena,
     "survival": null,
     "tag": null,
     "mot": null,

@@ -64,7 +64,7 @@ class WSSWriterStream extends Writer {
     }
 }
 
-type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "sandbox2" | "dom" | "dum" | "dom4" | "maze" | "tag" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
+type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "sandboxBeta" | "dom" | "dum" | "dom4" | "maze" | "tag" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
 
 const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> & { "*": typeof ArenaEntity }= {
     "ffa": FFAArena,

@@ -71,7 +71,7 @@ const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> 
     "teams": Teams2Arena,
     "4teams": Teams4Arena,
     "sandbox": SandboxArena,
-    "atk": ,
+    "atk": AttackArena,
     "*": SandboxArena,
     "dom": DominationArena,
     "dom4": Domination4Arena,

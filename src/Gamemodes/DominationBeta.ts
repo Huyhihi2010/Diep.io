@@ -79,13 +79,13 @@ export default class DominationArena extends ArenaEntity {
         } else if(chance > 0.3 && chance < 0.45) {
             tank.relations.values.team = this.greenTeam;
             tank.style.values.color = this.greenTeam.team.values.teamColor;
-            tank.position.values.x = arenaSize - x;
+            tank.position.values.x = -arenaSize + x;
             tank.position.values.y = arenaSize - y;
         } else {
             tank.relations.values.team = this.purpleTeam;
             tank.style.values.color = this.purpleTeam.team.values.teamColor;
             tank.position.values.x = arenaSize - x;
-            tank.position.values.y = arenaSize - y;
+            tank.position.values.y = -arenaSize + y;
         }
 
         if (client.camera) client.camera.relations.team = tank.relations.values.team;

@@ -28,7 +28,7 @@ import TeamBase from "./TeamBase";
 /**
  * Dominator Tank
  */
-export default class Dominator extends TankBody {
+export default class Dominatora extends TankBody {
     /** Size of a dominator */
     public static SIZE = 320;
 

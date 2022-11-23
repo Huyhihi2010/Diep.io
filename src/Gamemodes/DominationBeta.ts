@@ -19,7 +19,7 @@
 import Client from "../Client";
 import { Colors } from "../Const/Enums";
 import Dominator from "../Entity/Misc/Dominator";
-import Dominatora from "../Entity/Misc/Dominatora";
+import ArenaCloser from "../Entity/Misc/ArenaCloser";
 import TeamBase from "../Entity/Misc/TeamBase";
 import { TeamEntity } from "../Entity/Misc/TeamEntity";
 import TankBody from "../Entity/Tank/TankBody";
@@ -49,7 +49,7 @@ export default class DominationArena extends ArenaEntity {
         
         new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
         new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
-        new Dominatora(this, new TeamBase(game, this, arenaSize / 3, arenaSize / 3, domBaseSize * 3, domBaseSize * 3, false));
+        new ArenaCloser(this, new TeamBase(game, this, arenaSize / 2 - (domBasesize / 0.75), arenaSize / 2 - (domBasesize / 0.75), domBaseSize * 1.5, domBaseSize * 1.5, false));
         new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
         new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
     }

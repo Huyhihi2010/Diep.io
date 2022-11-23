@@ -57,7 +57,7 @@ export default class Dominatora extends TankBody {
         super(arena.game, camera, inputs);
 
         this.relations.values.team = arena;
-        this.physics.values.size = Dominator.SIZE;
+        this.physics.values.size = Dominatora.SIZE;
         // TODO(ABC):
         // Add setTeam method for this
         this.style.values.color = Colors.Neutral;

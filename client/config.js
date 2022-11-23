@@ -20,10 +20,10 @@ const BUILD = "6f59094d60f98fafc14371671d3ff31ef4d75d9e";
 const CDN = "https://static.diep.io/";
 
 const CHANGELOG = [
-    "Updated not so long time ago",
+    "New update!",
     "",
-    "Check out the github repo: github.com/ABCxFF/diepcustom",
-    "Join out discord: https://discord.com/invite/SyxWdxgHnT :)"
+    "Add 4 team domination, and 4 team dominations big",
+    "Add Open 4 Team, no Base Arena"
 ];
 
 const ASM_CONSTS = {

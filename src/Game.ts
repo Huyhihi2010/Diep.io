@@ -28,7 +28,6 @@ import ArenaEntity, { ArenaState } from "./Native/Arena";
 import FFAArena from "./Gamemodes/FFA";
 import Teams2Arena from "./Gamemodes/Team2";
 import SandboxArena from "./Gamemodes/Sandbox";
-import Sandbox2Arena from "./Gamemodes/Sandbox2";
 
 import { ClientBound } from "./Const/Enums";
 import { IncomingMessage } from "http";
@@ -37,6 +36,7 @@ import Teams4Arena from "./Gamemodes/Team4";
 import DominationArena from "./Gamemodes/Domination";
 import DominationBetaArena from "./Gamemodes/DominationBeta";
 import Domination4Arena from "./Gamemodes/Domination4Team";
+import SandboxBetaArena from "./Gamemodes/SandboxBeta";
 import TestingArena from "./Gamemodes/Misc/Testing";
 import SpikeboxArena from "./Gamemodes/Misc/Spikebox";
 import DominationTestingArena from "./Gamemodes/Misc/DomTest";
@@ -71,7 +71,7 @@ const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> 
     "teams": Teams2Arena,
     "4teams": Teams4Arena,
     "sandbox": SandboxArena,
-    "sandbox2": Sandbox2Arena,
+    "sandboxBeta": SandboxBetaArena,
     "dom": DominationArena,
     "dom4": Domination4Arena,
     "dum": DominationBetaArena,

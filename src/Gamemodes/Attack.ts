@@ -71,7 +71,7 @@ export default class SandboxArena extends ArenaEntity {
         if (chance < 0.5) {
             tank.relations.values.team = this.blueTeam;
             tank.style.values.color = this.blueTeam.team.values.teamColor;
-            tank.position.values.x = -arenaSize + x;
+            tank.position.values.x = -arenaSize * Math.random();
             tank.position.values.y = -arenaSize + y;
         } else {
             tank.relations.values.team = this.redTeam;

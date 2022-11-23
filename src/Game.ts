@@ -33,7 +33,6 @@ import { ClientBound } from "./Const/Enums";
 import { IncomingMessage } from "http";
 import WebSocket = require("ws");
 import Teams4Arena from "./Gamemodes/Team4";
-// import Open4Team from "./Gamemodes/Open4Team";
 import DominationArena from "./Gamemodes/Domination";
 import DominationBetaArena from "./Gamemodes/DominationBeta";
 import Domination4Arena from "./Gamemodes/Domination4Team";
@@ -70,7 +69,6 @@ const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> 
     "ffa": FFAArena,
     "teams": Teams2Arena,
     "4teams": Teams4Arena,
-    "op4t": null,
     "sandbox": SandboxArena,
     "*": SandboxArena,
     "dom": DominationArena,

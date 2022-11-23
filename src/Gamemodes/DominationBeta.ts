@@ -37,6 +37,8 @@ export default class DominationArena extends ArenaEntity {
     public blueTeam: TeamEntity = new TeamEntity(this.game, Colors.TeamBlue);
     /** Red Team entity */
     public redTeam: TeamEntity = new TeamEntity(this.game, Colors.TeamRed);
+    /** green Team entity */
+    public greenTeam: TeamEntity = new TeamEntity(this.game, Colors.TeamGreen);
 
     public constructor(game: GameServer) {
         super(game);
@@ -45,10 +47,10 @@ export default class DominationArena extends ArenaEntity {
 
         new TeamBase(game, this.blueTeam, -arenaSize + baseSize / 2,  -arenaSize + baseSize / 2, baseSize, baseSize);
         new TeamBase(game, this.redTeam, arenaSize - baseSize / 2, arenaSize - baseSize / 2, baseSize, baseSize);
+        new TeamBase(game, this.greenTeam, -arenaSize - baseSize / 2, arenaSize - baseSize / 2, baseSize, baseSize);
         
         new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
         new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
-        new Dominator(this, new TeamBase(game, this, arenaSize / 2 - ((domBaseSize * 1.5) / 2), arenaSize / 2 - ((domBaseSize * 1.5) / 2), domBaseSize * 1.5, domBaseSize * 1.5, false));
         new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
         new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
     }

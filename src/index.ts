@@ -112,6 +112,7 @@ server.listen(PORT, () => {
     const ffa = new GameServer(wss, "ffa", "FFA");
     const sbx = new GameServer(wss, "sandbox", "Sandbox");
     const maze = new GameServer(wss, "maze", "Maze");
+    const team2 = new GameServer(wss, "testing", "testmap")
 
     games.push(ffa, sbx, maze);
 

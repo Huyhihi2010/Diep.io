@@ -64,7 +64,7 @@ class WSSWriterStream extends Writer {
     }
 }
 
-type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "sandbox2" | "mot" | "dom" | "dum" | "dom4" | "maze" | "tag" | "survival" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
+type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "sandbox2" | "dom" | "dum" | "dom4" | "maze" | "tag" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
 
 const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> & { "*": typeof ArenaEntity }= {
     "ffa": FFAArena,
@@ -75,9 +75,7 @@ const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> 
     "dom": DominationArena,
     "dom4": Domination4Arena,
     "dum": DominationBetaArena,
-    "survival": null,
     "tag": null,
-    "mot": null,
     "maze": null,
     "testing": TestingArena,
     "spike": SpikeboxArena,

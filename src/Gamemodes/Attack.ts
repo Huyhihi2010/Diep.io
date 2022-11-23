@@ -47,8 +47,8 @@ export default class Teams2Arena extends ArenaEntity {
     public constructor(game: GameServer) {
         super(game);
         this.updateBounds(arenaSize * 2, arenaSize * 2);
-        new TeamBase(game, this.blueTeam, -arenaSize + baseWidth / 2, 0, arenaSize * 2, baseWidth);
-        new TeamBase(game, this.redTeam, arenaSize - baseWidth / 2, 0, arenaSize * 2, baseWidth);
+        new TeamBase(game, this.blueTeam, -arenaSize + baseWidth / 2, 0, baseWidth, arenaSize * 2);
+        new TeamBase(game, this.redTeam, arenaSize - baseWidth / 2, arenaSize - baseWidth / 2, baseWidth, baseWidth);
     }
 
     public spawnPlayer(tank: TankBody, client: Client) {

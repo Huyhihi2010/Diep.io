@@ -47,7 +47,7 @@ export default class Teams2Arena extends ArenaEntity {
 
     public spawnPlayer(tank: TankBody, client: Client) {
 
-const chance = Math.random();
+        const chance = Math.random();
         
         if (chance < 0.15) {
             tank.relations.values.team = this.blueTeam;

@@ -111,9 +111,9 @@ server.listen(PORT, () => {
     // NOTES(0): As of now, both servers run on the same process (and thread) here
     const ffa = new GameServer(wss, "ffa", "FFA");
     const sbx = new GameServer(wss, "sandbox", "Sandbox");
-    const maze = new GameServer(wss, "2Team", "Team2");
+    const team2 = new GameServer(wss, "2Team", "Team2");
 
-    games.push(ffa, sbx, dna);
+    games.push(ffa, sbx, team2);
 
     util.saveToLog("Servers up", "All servers booted up.", 0x37F554);
     util.log("Dumping endpoint -> gamemode routing table");

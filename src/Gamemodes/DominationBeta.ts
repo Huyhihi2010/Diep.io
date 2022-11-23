@@ -52,21 +52,18 @@ export default class DominationArena extends ArenaEntity {
         new TeamBase(game, this.greenTeam, -arenaSize + baseSize / 2, arenaSize - baseSize / 2, baseSize, baseSize);
         new TeamBase(game, this.purpleTeam, arenaSize - baseSize / 2, -arenaSize + baseSize / 2, baseSize, baseSize);
         
-        new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
+        // new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
         
-        new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / 1.5, domBaseSize, domBaseSize, false));
+        // new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
         
-        new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
+        // new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
         
-        new Dominator(this, new TeamBase(game, this, arenaSize / -1.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
+        // new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
         
-        new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
-        
-        new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / -1.5, domBaseSize, domBaseSize, false));
-        
-        new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
-        
-        new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / -1.5, domBaseSize, domBaseSize, false));
+        for(var i = 0; i < 15; i++) {
+            new Dominator(this, new TeamBase(game, this, arenaSize / (Math.cos(i) * -2.5), arenaSize / (Math.cos(i) * -2.5), domBaseSize, domBaseSize, false));
+            new Dominator(this, new TeamBase(game, this, arenaSize / (Math.cos(i) * 2.5), arenaSize / (Math.cos(i) * 2.5), domBaseSize, domBaseSize, false));
+        }
     }
 
     public spawnPlayer(tank: TankBody, client: Client) {

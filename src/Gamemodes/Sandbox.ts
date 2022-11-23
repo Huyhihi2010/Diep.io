@@ -16,6 +16,13 @@
     along with this program. If not, see <https://www.gnu.org/licenses/>
 */
 
+import Client from "../Client";
+import { Colors } from "../Const/Enums";
+import Dominator from "../Entity/Misc/Dominator";
+import TeamBase from "../Entity/Misc/TeamBase";
+import { TeamEntity } from "../Entity/Misc/TeamEntity";
+import TankBody from "../Entity/Tank/TankBody";
+
 import MazeWall from "../Entity/Misc/MazeWall";
 import GameServer from "../Game";
 import ArenaEntity from "../Native/Arena";

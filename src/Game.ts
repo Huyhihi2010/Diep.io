@@ -28,7 +28,7 @@ import ArenaEntity, { ArenaState } from "./Native/Arena";
 import FFAArena from "./Gamemodes/FFA";
 import Teams2Arena from "./Gamemodes/Team2";
 import SandboxArena from "./Gamemodes/Sandbox";
-import Sandbox2Arena from "./Gammodes/Sandbox2";
+import Sandbox2Arena from "./Gamemodes/Sandbox2";
 
 import { ClientBound } from "./Const/Enums";
 import { IncomingMessage } from "http";

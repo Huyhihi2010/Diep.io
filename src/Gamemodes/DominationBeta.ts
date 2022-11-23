@@ -48,6 +48,7 @@ export default class DominationArena extends ArenaEntity {
         
         new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
         new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
+        new Dominator(this, new TeamBase(game, this, arenaSize, arenaSize, domBaseSize * 3, domBaseSize * 3, false));
         new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
         new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
     }

@@ -124,7 +124,7 @@ server.listen(PORT, () => {
     const teams = new GameServer(wss, "teams", "2Team");
     
     const dom4 = new GameServer(wss, "dom4", "4Domination");
-    const atk = new GameServer(wss, "atk", "Defferent);
+    const atk = new GameServer(wss, "atk", "Defferent");
 
     // games.push(test, ffa, sbx, maze, dom, duma, teams4, teams, domtest, jungle, factest, spike, ball);
     games.push(ffa, dom, duma, dom4, teams4, teams, sbx, domtest, jungle, ball, atk);

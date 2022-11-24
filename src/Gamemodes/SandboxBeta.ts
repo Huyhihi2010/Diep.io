@@ -73,7 +73,7 @@ export default class SandboxArena extends ArenaEntity {
 	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, false));
 	    
 	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, false));
-	    new Dominator(this, new TeamBase(game, this, 0, 0, 0, 600, 600, false));
+	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, false));
 	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, false));
 	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, false));
 	   

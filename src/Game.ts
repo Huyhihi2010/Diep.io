@@ -45,7 +45,7 @@ import DominationTestingArena from "./Gamemodes/Misc/DomTest";
 import JungleArena from "./Gamemodes/Misc/Jungle";
 import FactoryTestArena from "./Gamemodes/Misc/FactoryTest";
 import BallArena from "./Gamemodes/Misc/Ball";
-import MothershipArena from "./Gamemodes/Misc/Mothership";
+import MothershipArena from "./Gamemodes/Mothership";
 
 /**
  * WriterStream that broadcasts to all of the game's WebSockets.

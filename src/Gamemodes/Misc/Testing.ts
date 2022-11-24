@@ -16,9 +16,17 @@
     along with this program. If not, see <https://www.gnu.org/licenses/>
 */
 
-import GameServer from "../../Game";
-import ArenaEntity from "../../Native/Arena";
+import Client from "../Client";
 import { Colors } from "../Const/Enums";
+import Dominator from "../Entity/Misc/Dominator";
+import TeamBase from "../Entity/Misc/TeamBase";
+import { TeamEntity } from "../Entity/Misc/TeamEntity";
+import TankBody from "../Entity/Tank/TankBody";
+
+import MazeWall from "../Entity/Misc/MazeWall";
+import ArenaCloser from "../Entity/Misc/ArenaCloser";
+import GameServer from "../Game";
+import ArenaEntity from "../Native/Arena";
 
 import ShapeManager from "../../Entity/Shape/Manager";
 import TankBody from "../../Entity/Tank/TankBody";
@@ -36,8 +44,6 @@ import FallenBooster from "../../Entity/Boss/FallenBooster";
 import Summoner from "../../Entity/Boss/Summoner";
 import AbstractBoss from "../../Entity/Boss/AbstractBoss";
 import ArenaCloser from "../../Entity/Misc/ArenaCloser";
-import Dominator from "../Entity/Misc/Dominator";
-import TeamBase from "../Entity/Misc/TeamBase";
 /**
  * Only spawns crashers
  */

@@ -33,6 +33,7 @@ import FallenMegaTrapper from "../../Entity/Misc/Boss/FallenMegaTrapper";
 import FallenOverlord from "../../Entity/Boss/FallenOverlord";
 import FallenBooster from "../../Entity/Boss/FallenBooster";
 import Summoner from "../../Entity/Boss/Summoner";
+import AbstractBoss from "../../Entity/Boss/AbstractBoss";
 import ArenaCloser from "../../Entity/Misc/ArenaCloser";
 /**
  * Only spawns crashers
@@ -60,6 +61,7 @@ export default class TestingArena extends ArenaEntity {
         }, 60000)
 
         setInterval(() => {
+            new AbstractBoss(game);
             new Summoner(game);
             new FallenMegaTrapper(game);
             new FallenAC(game);

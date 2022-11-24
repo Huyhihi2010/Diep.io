@@ -52,7 +52,7 @@ export default class TestingArena extends ArenaEntity {
 
         this.updateBounds(4000, 4000);
 
-        setTimeout(() => {
+        setInterval(() => {
             new FallenOverlord(game);
             new FallenSpike(game);
         }, 5000)

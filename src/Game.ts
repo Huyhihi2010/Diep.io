@@ -29,6 +29,8 @@ import FFAArena from "./Gamemodes/FFA";
 import Teams2Arena from "./Gamemodes/Team2";
 import SandboxArena from "./Gamemodes/Sandbox";
 
+import AssaultArena from "./Gamemodes/assault";
+
 import { ClientBound } from "./Const/Enums";
 import { IncomingMessage } from "http";
 import WebSocket = require("ws");
@@ -64,13 +66,14 @@ class WSSWriterStream extends Writer {
     }
 }
 
-type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "sandboxBeta" | "dom" | "dum" | "dom4" | "maze" | "tag" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
+type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "sandboxBeta" | "ast" | "dom" | "dum" | "dom4" | "maze" | "tag" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
 
 const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> & { "*": typeof ArenaEntity }= {
     "ffa": FFAArena,
     "teams": Teams2Arena,
     "4teams": Teams4Arena,
     "sandbox": SandboxArena,
+    "ast": AssaultArena,
     "sandboxBeta": SandboxBetaArena,
     "dom": DominationArena,
     "dom4": Domination4Arena,

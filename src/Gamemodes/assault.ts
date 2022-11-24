@@ -43,21 +43,6 @@ export default class DominationArena extends ArenaEntity {
         new TeamBase(game, this.blueTeam, -arenaSize + arenaSize,  -arenaSize + baseSize / 2, baseSize, arenaSize * 2);
         new TeamBase(game, this.redTeam, arenaSize - baseSize / 2, arenaSize - arenaSize, arenaSize * 2, baseSize);
         
-        // 223
-        
-        const titleH = (arenaSize * 2) / 100;
-        const titleW = (arenaSize * 2) / 100;
-        const floor = [
-        ];        
-        
-        for(var y = 0; y < titleH; y++) {
-            for(var x = 0; x < titleW; x++) {
-                let imgFloor = new Image();
-                let nameFloor;
-                switch(floor[((y*titleW) + x)]) {
-                }
-            }
-        }
         
         new Dominator(this.blueTeam, new TeamBase(game, this.blueTeam, arenaSize / 2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
         new Dominator(this.blueTeam, new TeamBase(game, this.blueTeam, arenaSize / -2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));

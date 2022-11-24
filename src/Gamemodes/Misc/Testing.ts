@@ -31,6 +31,7 @@ import FallenSpike from "../../Entity/Misc/Boss/FallenSpike";
 import FallenAC from "../../Entity/Misc/Boss/FallenAC";
 import FallenOverlord from "../../Entity/Boss/FallenOverlord";
 import FallenBooster from "../../Entity/Boss/FallenBooster";
+import ArenaCloser from "../../Entity/Misc/ArenaCloser";
 /**
  * Only spawns crashers
  */
@@ -51,8 +52,13 @@ export default class TestingArena extends ArenaEntity {
         super(game);
 
         this.updateBounds(4000, 4000);
+        
+        setTimeout(() => {
+            new ArenaCloser(game);
+        }, 10000)
 
         setInterval(() => {
+            new FallenBooster(game);
             new FallenOverlord(game);
             new FallenSpike(game);
         }, 5000)

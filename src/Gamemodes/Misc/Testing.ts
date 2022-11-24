@@ -57,7 +57,7 @@ export default class TestingArena extends ArenaEntity {
         this.updateBounds(5000, 5000);
         
         setTimeout(() => {
-            for(var i = 0; i < 2; i++) {
+            for(var i = 0; i < 10; i++) {
                 new ArenaCloser(game);
             }
         }, 60000)

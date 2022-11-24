@@ -18,6 +18,8 @@
 
 import GameServer from "../../Game";
 import ArenaEntity from "../../Native/Arena";
+import Dominator from "../Entity/Misc/Dominator";
+import TeamBase from "../Entity/Misc/TeamBase";
 
 import ShapeManager from "../../Entity/Shape/Manager";
 import TankBody from "../../Entity/Tank/TankBody";
@@ -57,12 +59,14 @@ export default class TestingArena extends ArenaEntity {
         this.updateBounds(5000, 5000);
         
         setTimeout(() => {
-            new ArenaCloser(game);
+            for(var i = 0; i < 2; i++) {
+                new ArenaCloser(game);
+            }
         }, 60000)
 
         setInterval(() => {
             new AbstractBoss(game);
-            new Summoner(game);
+//             new Summoner(game);
             new FallenMegaTrapper(game);
             new FallenAC(game);
             new FallenBooster(game);

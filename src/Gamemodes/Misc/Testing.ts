@@ -29,8 +29,10 @@ import Client from "../../Client";
 import Guardian from "../../Entity/Boss/Guardian";
 import FallenSpike from "../../Entity/Misc/Boss/FallenSpike";
 import FallenAC from "../../Entity/Misc/Boss/FallenAC";
+import FallenMegaTrapper from "../../Entity/Misc/Boss/FallenMegaTrapper";
 import FallenOverlord from "../../Entity/Boss/FallenOverlord";
 import FallenBooster from "../../Entity/Boss/FallenBooster";
+import Summoner from "../../Entity/Boss/Summoner";
 import ArenaCloser from "../../Entity/Misc/ArenaCloser";
 /**
  * Only spawns crashers
@@ -51,13 +53,16 @@ export default class TestingArena extends ArenaEntity {
     public constructor(game: GameServer) {
         super(game);
 
-        this.updateBounds(4000, 4000);
+        this.updateBounds(5000, 5000);
         
         setTimeout(() => {
             new ArenaCloser(game);
-        }, 10000)
+        }, 60000)
 
         setInterval(() => {
+            new Summoner(game);
+            new FallenMegaTrapper(game);
+            new FallenAC(game);
             new FallenBooster(game);
             new FallenOverlord(game);
             new FallenSpike(game);

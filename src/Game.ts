@@ -45,6 +45,7 @@ import DominationTestingArena from "./Gamemodes/Misc/DomTest";
 import JungleArena from "./Gamemodes/Misc/Jungle";
 import FactoryTestArena from "./Gamemodes/Misc/FactoryTest";
 import BallArena from "./Gamemodes/Misc/Ball";
+import MothershipArena from "./Gamemodes/Misc/Mothership";
 
 /**
  * WriterStream that broadcasts to all of the game's WebSockets.
@@ -66,7 +67,7 @@ class WSSWriterStream extends Writer {
     }
 }
 
-type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "sandboxBeta" | "ast" | "dom" | "dum" | "dom4" | "maze" | "tag" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
+type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "mothership" | "sandboxBeta" | "ast" | "dom" | "dum" | "dom4" | "maze" | "tag" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball";
 
 const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> & { "*": typeof ArenaEntity }= {
     "ffa": FFAArena,
@@ -74,6 +75,7 @@ const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> 
     "4teams": Teams4Arena,
     "sandbox": SandboxArena,
     "ast": AssaultArena,
+    "mothership": MothershipArena,
     "sandboxBeta": SandboxBetaArena,
     "dom": DominationArena,
     "dom4": Domination4Arena,

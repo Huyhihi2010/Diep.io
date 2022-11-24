@@ -41,18 +41,35 @@ export default class DominationArena extends ArenaEntity {
         this.updateBounds(arenaSize * 2, arenaSize * 2)
 
         new TeamBase(game, this.blueTeam, -arenaSize + arenaSize,  -arenaSize + baseSize / 2, baseSize, arenaSize * 2);
-        new TeamBase(game, this.redTeam, arenaSize - baseSize / 2, arenaSize - baseSize / 2, baseSize, baseSize);
+        new TeamBase(game, this.redTeam, arenaSize - baseSize / 2, arenaSize - arenaSize, arenaSize * 2, baseSize);
         
-        // new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
-        // new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
-        // new Dominator(this, new TeamBase(game, this, arenaSize / -2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
-        // new Dominator(this, new TeamBase(game, this, arenaSize / 2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
+        // 223
+        
+        const titleH = (arenaSize * 2) / 100;
+        const titleW = (arenaSize * 2) / 100;
+        const floor = [
+        ];        
+        
+        for(var y = 0; y < titleH; y++) {
+            for(var x = 0; x < titleW; x++) {
+                let imgFloor = new Image();
+                let nameFloor;
+                switch(floor[((y*titleW) + x)]) {
+                }
+            }
+        }
+        
+        new Dominator(this.blueTeam, new TeamBase(game, this.blueTeam, arenaSize / 2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
+        new Dominator(this.blueTeam, new TeamBase(game, this.blueTeam, arenaSize / -2.5, arenaSize / 2.5, domBaseSize, domBaseSize, false));
+        new Dominator(this, new TeamBase(game, this, 0, 0, domBaseSize*2, domBaseSize*2, false));
+        new Dominator(this.redTeam, new TeamBase(game, this.redTeam, arenaSize / -2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
+        new Dominator(this.redTeam, new TeamBase(game, this.redTeam, arenaSize / 2.5, arenaSize / -2.5, domBaseSize, domBaseSize, false));
     }
 
     public spawnPlayer(tank: TankBody, client: Client) {
         tank.position.values.y = arenaSize * Math.random() - arenaSize;
 
-        const x = Math.random() * baseSize,
+        const x = Math.random() * arenaSize,
               y = Math.random() * baseSize;
         
         const chance = Math.random();

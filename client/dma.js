@@ -20,7 +20,7 @@ const setupDMAHelpers = () => {
     $.write = (ptr, type, value) => {
         switch(type) {
             case "struct": return $.writeStruct(ptr, value);
-            case "vector": return new $.Vector(ptr, value.type, value.typeSize).push(value.entries);
+            case "vector": return new $.Vector(ptr, value.type, value.typeSize).push(...value.entries);
             default: return $(ptr)[type] = value;
         }
     }
@@ -29,6 +29,48 @@ const setupDMAHelpers = () => {
         for(const { offset, type, value } of fields) 
             $.write(ptr + offset, type, value);
     }
+
+    $.List = class LinkedList {
+        constructor(ptr, type, typeSize) {
+            this.ptr = ptr;
+            this.type = type;
+            this.typeSize = typeSize;
+        }
+
+        push(...entries) {
+            for(const entry of entries) this._append(this._end, entry);
+            this.length += entries.length;
+        }
+
+        forEach(cb) {
+            let current = $(this.ptr);
+            while(current.i32) {
+                cb(current.i32);
+                current = current.$;
+            }
+        }
+
+        get length() {
+            return $(this.ptr)[4].i32;
+        }
+
+        set length(val) {
+            $.write(this.ptr + 4, "u32", val);
+        }
+
+        get _end() {
+            let current = $(this.ptr);
+            while(current.i32) current = current.$;
+            return current.at;
+        }
+
+        _append(last, entry) {
+            const ptr = Module.exports.malloc(this.typeSize);
+            $.write(ptr, this.type, entry);
+            $.write(last, "$", ptr);
+        }
+    }
+
 
     $.Vector = class Vector {
         constructor(ptr, type, typeSize) {
@@ -56,11 +98,7 @@ const setupDMAHelpers = () => {
             Module.HEAPU8.subarray(this.start, this.maxCapacity).fill(0);
         }
     
-        delete() {
-            this._free();
-        }
-    
-        _free() {
+        destroy() {
             Module.exports.free(this.start);
             this.start = 0;
             this.end = 0;
@@ -82,6 +120,7 @@ const setupDMAHelpers = () => {
         }
     
         _malloc() {
+            this.maxEntries = (this.maxCapacity - this.start) / this.typeSize;
             this.totalSize = this.entries.length * this.typeSize;
             this.start = Module.exports.malloc(this.totalSize);
             this.end = this.start;

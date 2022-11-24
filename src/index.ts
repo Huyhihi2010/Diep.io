@@ -128,7 +128,7 @@ server.listen(PORT, () => {
     const ast = new GameServer(wss, "ast", "Assault");
 
     // games.push(test, ffa, sbx, maze, dom, duma, teams4, teams, domtest, jungle, factest, spike, ball);
-    games.push(spike, ffa, dom, duma, dom4, teams4, teams, sbx, jungle, sbxb, ast);
+    games.push(test, ffa, dom, duma, dom4, teams4, teams, sbx, jungle, sbxb, ast);
 
     util.saveToLog("Servers up", "All servers booted up.", 0x37F554);
     util.log("Dumping endpoint -> gamemode routing table");

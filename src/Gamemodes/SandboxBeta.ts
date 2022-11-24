@@ -70,15 +70,15 @@ export default class SandboxArena extends ArenaEntity {
 // 	    new Dominator(this, new TeamBase(game, this, 0, 0 + 600, 600, 600, false));
 // 	    new Dominator(this, new TeamBase(game, this, 0 + 600, 0, 600, 600, false));
 	    
-	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 2);
-	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 2);
-	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 2);
-	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 2);
+	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
+	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
+	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
+	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
 	    
-	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 2);
-	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 2);
-	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 2);
-	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 2);
+	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
+	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
+	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
+	    new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
 	   
 
 		// const w1 = new MazeWall(this.game, 0, 0, 500, 500);

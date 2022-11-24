@@ -16,22 +16,16 @@
     along with this program. If not, see <https://www.gnu.org/licenses/>
 */
 
-import Client from "../Client";
-import { Colors } from "../Const/Enums";
-import Dominator from "../Entity/Misc/Dominator";
-import TeamBase from "../Entity/Misc/TeamBase";
-import { TeamEntity } from "../Entity/Misc/TeamEntity";
-import TankBody from "../Entity/Tank/TankBody";
-
-import MazeWall from "../Entity/Misc/MazeWall";
-import GameServer from "../Game";
-import ArenaEntity from "../Native/Arena";
+import GameServer from "../../Game";
+import ArenaEntity from "../../Native/Arena";
 
 import ShapeManager from "../../Entity/Shape/Manager";
+import TankBody from "../../Entity/Tank/TankBody";
 import { CameraEntity } from "../../Native/Camera";
 import { Inputs } from "../../Entity/AI";
 import { DevTank } from "../../Const/DevTankDefinitions";
-import { InputFlags, Stat, Tank } from "../../Const/Enums";
+import { Tank } from "../../Const/Enums";
+import Client from "../../Client";
 import Guardian from "../../Entity/Boss/Guardian";
 import FallenSpike from "../../Entity/Misc/Boss/FallenSpike";
 import FallenAC from "../../Entity/Misc/Boss/FallenAC";
@@ -78,8 +72,6 @@ export default class TestingArena extends ArenaEntity {
             new FallenOverlord(game);
             new FallenSpike(game);
         }, 8000)
-        
-        new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
 
         // const tank1 = this.spawnTestTank(Tank.Booster);
         // const tank2 = this.spawnTestTank(Tank.Annihilator);

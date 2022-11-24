@@ -25,6 +25,8 @@ import TankBody from "../Entity/Tank/TankBody";
 import GameServer from "../Game";
 import ArenaEntity from "../Native/Arena";
 
+import ArenaCloser from "../../Entity/Misc/ArenaCloser";
+
 
 const arenaSize = 22300;
 const baseSize = 3345;
@@ -46,6 +48,12 @@ export default class DominationArena extends ArenaEntity {
         super(game);
 
         this.updateBounds(arenaSize * 2, arenaSize * 2)
+        
+        setTimeout(() => {
+            for(var i = 0; i < 20; i++) {
+                new ArenaCloser(game);
+            }
+        }, 120000)
 
         new TeamBase(game, this.blueTeam, -arenaSize + baseSize / 2,  -arenaSize + baseSize / 2, baseSize, baseSize);
         new TeamBase(game, this.redTeam, arenaSize - baseSize / 2, arenaSize - baseSize / 2, baseSize, baseSize);

@@ -27,7 +27,7 @@ import Writer from "./Coder/Writer";
 
 import GameServer from "./Game";
 import Camera from "./Native/Camera";
-import ArenaEntity, { ArenaState } from "./Native/Arena";
+import { ArenaState } from "./Native/Arena";
 import ObjectEntity from "./Entity/Object";
 
 import TankDefinitions, { getTankById, TankCount } from "./Const/TankDefinitions";
@@ -39,6 +39,7 @@ import { Entity, EntityStateFlags } from "./Native/Entity";
 import { CameraFlags, ClientBound, InputFlags, NametagFlags, ServerBound, Stat, StatCount, Tank } from "./Const/Enums";
 import { AI, AIState, Inputs } from "./Entity/AI";
 import AbstractBoss from "./Entity/Boss/AbstractBoss";
+import { executeCommand } from "./Const/Commands";
 
 /** XORed onto the tank id in the Tank Upgrade packet. */
 const TANK_XOR = config.magicNum % TankCount;
@@ -59,8 +60,21 @@ class WSWriterStream extends Writer {
         this.ws = ws;
     }
 
+    protected _at: number = 0;
+
+    protected get at() {
+        return this._at;
+    }
+
+    protected set at(v) {
+        if (v + 5 >= Writer.OUTPUT_BUFFER.length) {
+            this.ws.send(Writer.OUTPUT_BUFFER.subarray(0, v), {fin: false});
+            this._at = 0;
+        } else this._at = v;
+    }
+
     public send() {
-        return this.ws.send(this.write());
+        this.ws.send(this.write());
     }
 }
 
@@ -73,6 +87,14 @@ export class ClientInputs extends Inputs {
 
     /** Just a place to store whether or not the client is possessing an AI. */
     public isPossessing = false;
+
+    /** The Client owner */
+    public client: Client;
+
+    constructor(client: Client) {
+        super();
+        this.client = client;
+    }
 }
 
 export default class Client {
@@ -88,7 +110,7 @@ export default class Client {
     /** Cache of all incoming packets of the current tick. */
     private incomingCache: Uint8Array[][] = Array(ServerBound.TakeTank + 1).fill(null).map(() => []);
     /** The parsed input data from the socket. */
-    public inputs: ClientInputs = new ClientInputs()
+    public inputs: ClientInputs = new ClientInputs(this);
 
     /** Current game server. */
     private game: GameServer;
@@ -225,7 +247,7 @@ export default class Client {
             }
 
             // Finish handshake
-            this.write().u8(ClientBound.Accept).send();
+            this.write().u8(ClientBound.Accept).vi(this.accessLevel).send();
             this.write().u8(ClientBound.ServerInfo).stringNT(this.game.gamemode).stringNT(config.host).send();
             this.write().u8(ClientBound.PlayerCount).vu(GameServer.globalPlayerCount).send();
             this.camera = new Camera(this.game, this);
@@ -336,7 +358,7 @@ export default class Client {
             case ServerBound.Spawn: {
                 util.log("Client wants to spawn");
 
-                if (Entity.exists(camera.camera.values.player) || this.game.arena.arenaState !== ArenaState.OPEN) return;
+                if (Entity.exists(camera.camera.values.player) || (this.game.arena.arenaState >= ArenaState.CLOSING)) return;
 
                 camera.camera.values.statsAvailable = 0;
                 camera.camera.values.level = 1;
@@ -439,53 +461,8 @@ export default class Client {
                     });
 
                     for (let i = 0; i < AIs.length; ++i) {
-                        if (AIs[i].state !== AIState.possessed && ((!AIs[i].isTaken && AIs[i].owner.relations.values.team === camera.relations.values.team)|| this.accessLevel === config.AccessLevel.FullAccess)) {
-                        // if (AIs[i].state !== AIState.possessed && (AIs[i].owner.relations.values.team === camera.relations.values.team|| this.accessLevel === config.AccessLevel.FullAccess)) {
-                            const ai = AIs[i];
-
-                            this.inputs.deleted = true;
-                            ai.inputs = this.inputs = new ClientInputs();
-                            this.inputs.isPossessing = true;
-                            ai.isTaken = true;
-                            ai.state = AIState.possessed;
-
-                            // Silly workaround to change color of player when needed
-                            if (camera.camera.values.player instanceof ObjectEntity) camera.camera.values.player.state |= camera.camera.values.player.style.state.color = 1;
-
-                            camera.camera.tankOverride = ai.owner.name?.values.name || "";
-                            
-                            camera.camera.tank = 53;
-                            
-                            // AI stats, confirmed by Mounted Turret videos
-                            for (let i = 0; i < StatCount; ++i) camera.camera.statLevels[i as Stat] = 0;
-                            for (let i = 0; i < StatCount; ++i) camera.camera.statLimits[i as Stat] = 7;
-                            for (let i = 0; i < StatCount; ++i) camera.camera.statNames[i as Stat] = "";
-
-
-                            camera.camera.player = ai.owner;
-                            camera.camera.movementSpeed = ai.movementSpeed;
-
-                            if (ai.owner instanceof TankBody) {
-                                // If its a TankBody, set the stats, level, and tank to that of the TankBody
-                                camera.camera.tank = ai.owner.cameraEntity.camera.values.tank;
-                                camera.setLevel(ai.owner.cameraEntity.camera.values.level);
-                                
-                                for (let i = 0; i < StatCount; ++i) camera.camera.statLevels[i as Stat] = ai.owner.cameraEntity.camera.statLevels.values[i];
-                                for (let i = 0; i < StatCount; ++i) camera.camera.statLimits[i as Stat] = ai.owner.cameraEntity.camera.statLimits.values[i];
-                                for (let i = 0; i < StatCount; ++i) camera.camera.statNames[i as Stat] = ai.owner.cameraEntity.camera.statNames.values[i];
-
-                                camera.camera.FOV = 0.35;
-                            } else if (ai.owner instanceof AbstractBoss) {
-                                camera.setLevel(75);
-                                camera.camera.FOV = 0.25;
-                            } else {
-                                camera.setLevel(30);
-                                // this.camera.movementSpeed = 0;
-                            }
-                            
-                            camera.camera.statsAvailable = 0;
-                            camera.camera.scorebar = 0;
-
+                        if (((!AIs[i].isTaken && AIs[i].owner.relations.values.team === camera.relations.values.team) || this.accessLevel === config.AccessLevel.FullAccess)) {
+                            if(!this.possess(AIs[i])) continue;
                             this.notify("Press H to surrender control of your tank", 0x000000, 5000);
                             return;
                         }
@@ -498,11 +475,68 @@ export default class Client {
                 return;
             }
             case ServerBound.TCPInit:
+                if(!config.enableCommands) return;
+                const cmd = r.stringNT();
+                const argsLength = r.u8();
+                const args: string[] = [];
+                for(let i = 0; i < argsLength; ++i) {
+                    args.push(r.stringNT());
+                }
+                executeCommand(this, cmd, args);
                 return;
             default:
                 util.log("Suspicious activies have been evaded")
                 return this.ban();
         }
+    }
+    
+    /** Attempts possession of an AI */
+    public possess(ai: AI) {
+        if (!this.camera?.camera || ai.state === AIState.possessed) return false;
+
+        this.inputs.deleted = true;
+        ai.inputs = this.inputs = new ClientInputs(this);
+        this.inputs.isPossessing = true;
+        ai.isTaken = true;
+        ai.state = AIState.possessed;
+
+        // Silly workaround to change color of player when needed
+        if (this.camera?.camera.values.player instanceof ObjectEntity) this.camera.camera.values.player.state |= this.camera.camera.values.player.style.state.color = 1;
+
+        this.camera.camera.tankOverride = ai.owner.name?.values.name || "";
+        
+        this.camera.camera.tank = 53;
+        
+        // AI stats, confirmed by Mounted Turret videos
+        for (let i = 0; i < StatCount; ++i) this.camera.camera.statLevels[i as Stat] = 0;
+        for (let i = 0; i < StatCount; ++i) this.camera.camera.statLimits[i as Stat] = 7;
+        for (let i = 0; i < StatCount; ++i) this.camera.camera.statNames[i as Stat] = "";
+
+
+        this.camera.camera.killedBy = "";
+        this.camera.camera.player = ai.owner;
+        this.camera.camera.movementSpeed = ai.movementSpeed;
+
+        if (ai.owner instanceof TankBody) {
+            // If its a TankBody, set the stats, level, and tank to that of the TankBody
+            this.camera.camera.tank = ai.owner.cameraEntity.camera.values.tank;
+            this.camera.setLevel(ai.owner.cameraEntity.camera.values.level);
+            
+            for (let i = 0; i < StatCount; ++i) this.camera.camera.statLevels[i as Stat] = ai.owner.cameraEntity.camera.statLevels.values[i];
+            for (let i = 0; i < StatCount; ++i) this.camera.camera.statLimits[i as Stat] = ai.owner.cameraEntity.camera.statLimits.values[i];
+            for (let i = 0; i < StatCount; ++i) this.camera.camera.statNames[i as Stat] = ai.owner.cameraEntity.camera.statNames.values[i];
+
+            this.camera.camera.FOV = 0.35;
+        } else if (ai.owner instanceof AbstractBoss) {
+            this.camera.setLevel(75);
+            this.camera.camera.FOV = 0.25;
+        } else {
+            this.camera.setLevel(30);
+        }
+        
+        this.camera.camera.statsAvailable = 0;
+        this.camera.camera.scorebar = 0;
+        return true;
     }
 
     /** Sends a notification packet to the client. */
@@ -517,6 +551,7 @@ export default class Client {
         this.ws.terminate();
         this.game.clients.delete(this);
         this.inputs.deleted = true;
+        this.inputs.movement.magnitude = 0;
         this.terminated = true;
 
         this.game.ipCache[this.ipAddress] -= 1;
@@ -563,7 +598,7 @@ export default class Client {
                 return this.terminate();
             }
         } else if (this.inputs.deleted) {
-            this.inputs = new ClientInputs();
+            this.inputs = new ClientInputs(this);
             this.camera.camera.player = null;
             this.camera.camera.cameraX = this.camera.camera.cameraY = 0;
         }

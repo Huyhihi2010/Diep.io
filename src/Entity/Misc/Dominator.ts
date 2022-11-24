@@ -46,7 +46,10 @@ export default class Dominator extends TankBody {
             if (r < 1) tankId = Tank.DominatorD;
             else if (r < 2) tankId = Tank.DominatorG;
             else tankId = Tank.DominatorT;
-        } else tankId = pTankId;
+        } else {
+            tankId = pTankId;
+            this.ai.movementSpeed = 5;
+        };
 
         const inputs = new Inputs();
         const camera = new CameraEntity(arena.game);

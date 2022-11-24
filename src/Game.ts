@@ -78,7 +78,7 @@ const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> 
     "dom": DominationArena,
     "dom4": Domination4Arena,
     "dum": DominationBetaArena,
-    "*": FFAArena,
+    "*": SandboxArena,
     "tag": null,
     "maze": null,
     "testing": TestingArena,

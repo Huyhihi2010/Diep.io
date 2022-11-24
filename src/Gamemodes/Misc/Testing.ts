@@ -68,7 +68,9 @@ export default class TestingArena extends ArenaEntity {
             new FallenBooster(game);
             new FallenOverlord(game);
             new FallenSpike(game);
-        }, 5000)
+        }, 8000)
+        
+        new Dominator(this, new TeamBase(game, this, 0, 0, 600, 600, true), 1);
 
         // const tank1 = this.spawnTestTank(Tank.Booster);
         // const tank2 = this.spawnTestTank(Tank.Annihilator);

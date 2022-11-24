@@ -29,6 +29,8 @@ import ArenaEntity from "../Native/Arena";
 
 import ShapeManager from "../Entity/Shape/Manager";
 
+const arenaSize = 5000;
+
 /**
  * Manage shape count
  */
@@ -52,17 +54,17 @@ export default class SandboxArena extends ArenaEntity {
     public constructor(game: GameServer) {
         super(game);
 
-		this.updateBounds(3500, 3500);
+		this.updateBounds(arenaSize * 2, arenaSize * 2);
 
-    new Dominator(this, new TeamBase(game, this, 0, 0, 500, 500, false));
+    new Dominator(this, new TeamBase(game, this, 0, 0, 400, 400, true));
 
 		// const w1 = new MazeWall(this.game, 0, 0, 500, 500);
     }
 
-    public tick(tick: number) {
-		const arenaSize = Math.floor(25 * Math.sqrt(Math.max(this.game.clients.size, 1))) * 100;
-		if (this.width !== arenaSize || this.height !== arenaSize) this.updateBounds(arenaSize, arenaSize);
+//     public tick(tick: number) {
+// 		const arenaSize = Math.floor(25 * Math.sqrt(Math.max(this.game.clients.size, 1))) * 100;
+// 		if (this.width !== arenaSize || this.height !== arenaSize) this.updateBounds(arenaSize, arenaSize);
 
-        super.tick(tick);
-    }
+//         super.tick(tick);
+//     }
 }

@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@Huyhihi2010 
-ABCxFF
-/
-diepcustom
-Public template
-Code
-Issues
-11
-Pull requests
-1
-Actions
-Security
-Insights
-diepcustom/src/Entity/Misc/Mothership.ts /
-@c86ec23b-fef1-4979-b2fa-b9adc351b8cc
-c86ec23b-fef1-4979-b2fa-b9adc351b8cc fix: let non teamed players get broadcasted on death of mot
-…
-Latest commit 6da9ff0 4 days ago
- History
- 2 contributors
-@c86ec23b-fef1-4979-b2fa-b9adc351b8cc@ABCxFF
-136 lines (105 sloc)  5.39 KB
-
 /*
     DiepCustom - custom tank game server that shares diep.io's WebSocket protocol
     Copyright (C) 2022 ABCxFF (github.com/ABCxFF)
@@ -162,18 +131,3 @@ export default class Mothership extends TankBody {
         super.tick(tick);
     }
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-diepcustom/src/Entity/Misc at main · ABCxFF/diepcustomdiepcustom/Mothership.ts at main · ABCxFF/diepcustom

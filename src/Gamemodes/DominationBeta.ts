@@ -25,7 +25,7 @@ import TankBody from "../Entity/Tank/TankBody";
 import GameServer from "../Game";
 import ArenaEntity from "../Native/Arena";
 
-import ArenaCloser from "../../Entity/Misc/ArenaCloser";
+import ArenaCloser from "../Entity/Misc/ArenaCloser";
 
 
 const arenaSize = 22300;

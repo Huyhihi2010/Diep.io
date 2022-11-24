@@ -18,13 +18,12 @@
 
 const BUILD = "6f59094d60f98fafc14371671d3ff31ef4d75d9e";
 const CDN = "https://static.diep.io/";
-const API_URL = `${window.location.href}api/`;
 
 const CHANGELOG = [
-    "new Update!",
-    "",
-    "App new",
-    "New Server"
+    "Updated not so long time ago",
+    "By Đặng Gia Huy",
+    "Check out the github repo: github.com/ABCxFF/diepcustom",
+    "Join out discord: https://discord.com/invite/SyxWdxgHnT :)"
 ];
 
 const ASM_CONSTS = {
@@ -236,20 +235,14 @@ const WASM_EXPORTS = {
 
 const MOD_CONFIG = {
     "wasmFunctions": {
+        "tankDefsCtor": 276,
         "loadGamemodeButtons": 296,
-        "loadVectorDone": 22,
-        "loadChangelog": 447,
-        "loadTankDefinitions": 277,
-        "getTankDefinition": 101,
-        "findCommand": 496
+        "vectorCtorDone": 22,
+        "loadChangelog": 447
     },
     "memory": {
         "gamemodeButtons": 113480,
-        "changelog": 167328,
-        "changelogLoaded": 168632,
-        "tankDefinitions": 166572,
-        "tankDefinitionsCount": 166576,
-        "commandList": 53064
+        "changelog": 167328
     },
     "wasmFunctionHookOffset": {
         "gamemodeButtons": 33,
@@ -257,111 +250,9 @@ const MOD_CONFIG = {
     }
 };
 
-const ADDON_MAP = {
-    "barrelAddons": {
-        "trapLauncher": 147
-    },
-    "tankAddons": {
-        "auto3": 148,
-        "smasher": 149,
-        "pronounced": 150,
-        "landmine": 151,
-        "auto5": 153,
-        "autoturret": 154, // Auto Trapper (154) & Auto Gunner (152)
-        "autosmasher": 155,
-        "spike": 156,
-        "launcher": 157, // Skimmer (157) & Rocketeer (158)
-        "dombase": 159,
-        "dompronounced": 160, // Dom1 (160) & Dom2 (161) 
-    }
-};
-
-const CUSTOM_COMMANDS = [
-    {
-        "id": "test",
-        "description": "Test command to check if custom commands are working, prints 'Hello World' to the console",
-        "callback": args => { // array of strings, you need to parse them yourself
-            console.log("Hello World");
-        }
-    }, {
-        "id": "util_reload_servers",
-        "usage": "[?interval]",
-        "description": "Sets the interval in which gamemodes are reloaded automatically (milliseconds, 'never' or 'connect') or reloads once if no interval is given",
-        "callback": args => {
-            if(args[0]) {
-                const num = parseInt(args[0]);
-                if(isNaN(num)) {
-                    switch(args[0]) {
-                        case "never":
-                            return Module.reloadServersInterval = -1;
-                        case "connect":
-                            return Module.reloadServersInterval = -2;
-                    }
-                }
-                return Module.reloadServersInterval = num;
-            }
-            Game.reloadServers();
-        }
-    }, {
-        "id": "util_reload_tanks",
-        "usage": "[?interval]",
-        "description": "Sets the interval in which tanks are reloaded automatically (milliseconds, 'never' or 'connect') or reloads once if no interval is given",
-        "callback": args => {
-            if(args[0]) {
-                const num = parseInt(args[0]);
-                if(isNaN(num)) {
-                    switch(args[0]) {
-                        case "never":
-                            return Module.reloadTanksInterval = -1;
-                        case "connect":
-                            return Module.reloadTanksInterval = -2;
-                    }
-                }
-                return Module.reloadTanksInterval = num;
-            }
-            Game.reloadTanks();
-        }
-    }, {
-        "id": "util_reload_commands",
-        "usage": "[?interval]",
-        "description": "Sets the interval in which commands are reloaded automatically (milliseconds, 'never' or 'connect') or reloads once if no interval is given",
-        "callback": args => {
-            if(args[0]) {
-                const num = parseInt(args[0]);
-                if(isNaN(num)) {
-                    switch(args[0]) {
-                        case "never":
-                            return Module.reloadCommandsInterval = -1;
-                        case "connect":
-                            return Module.reloadCommandsInterval = -2;
-                    }
-                }
-                return Module.reloadCommandsInterval = num;
-            }
-            Game.reloadCommands();
-        }
-    }, {
-        "id": "util_set_changelog",
-        "usage": "[line 1\\n] [line 2] ...",
-        "description": "Sets the changelog to the given text, remember to use \\n before and after each line",
-        "callback": args => {
-            Game.changeChangelog(args.join(' ').split("\\n"));
-        }
-    }
-];
-
-const COMMANDS_LOOKUP = {
-    "con_toggle": 52952,
-    "game_spawn": 52992,
-    "help": 49956,
-    "lb_reconnect": 50056,
-    "net_replace_color": 50152,
-    "net_replace_colors": 50192,
-    "ui_replace_colors": 49916
-};
-
 const WASM_TABLE = {
     "initial": 687,
+    "maximum": 687,
     "element": "anyfunc"
 };
 

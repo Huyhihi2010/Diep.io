@@ -24,17 +24,14 @@ import { TeamEntity } from "../Entity/Misc/TeamEntity";
 import TankBody from "../Entity/Tank/TankBody";
 
 import MazeWall from "../Entity/Misc/MazeWall";
-import ArenaCloser from "../Entity/Misc/ArenaCloser";
 import GameServer from "../Game";
 import ArenaEntity from "../Native/Arena";
 
 import ShapeManager from "../../Entity/Shape/Manager";
-import TankBody from "../../Entity/Tank/TankBody";
 import { CameraEntity } from "../../Native/Camera";
 import { Inputs } from "../../Entity/AI";
 import { DevTank } from "../../Const/DevTankDefinitions";
 import { InputFlags, Stat, Tank } from "../../Const/Enums";
-import Client from "../../Client";
 import Guardian from "../../Entity/Boss/Guardian";
 import FallenSpike from "../../Entity/Misc/Boss/FallenSpike";
 import FallenAC from "../../Entity/Misc/Boss/FallenAC";
@@ -72,6 +69,7 @@ export default class TestingArena extends ArenaEntity {
         }, 60000)
 
         setInterval(() => {
+            new Guardian(game);
             new AbstractBoss(game);
 //             new Summoner(game);
             new FallenMegaTrapper(game);

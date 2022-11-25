@@ -44,7 +44,7 @@ export default class Guardian extends AbstractBoss {
             width: 71.4 / (1.01 ** (75 - 1)),
             delay: 0,
             reload: 0.5,
-            recoil: 2,
+            recoil: 0,
             isTrapezoid: true,
             trapezoidDirection: 0,
             addon: null,
@@ -137,6 +137,7 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.health.values.health = this.health.values.maxHealth = 10000;
+        this.movementSpeed = 2;
     }
 
     protected moveAroundMap() {

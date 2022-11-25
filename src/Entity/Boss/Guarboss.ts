@@ -110,7 +110,7 @@ export default class Guardian extends AbstractBoss {
                 canControlDrones: true,
                 bullet: {
                     type: "drone",
-                    sizeRatio: 0.6,
+                    sizeRatio: 0.2,
                     health: 2,
                     damage: 15,
                     speed: 1.7,

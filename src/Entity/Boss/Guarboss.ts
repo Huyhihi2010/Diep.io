@@ -48,7 +48,7 @@ export default class Guardian extends AbstractBoss {
             isTrapezoid: true,
             trapezoidDirection: 0,
             addon: null,
-            droneCount: 8,
+            droneCount: 18,
             canControlDrones: true,
             bullet: {
                 type: "drone",
@@ -73,7 +73,7 @@ export default class Guardian extends AbstractBoss {
             isTrapezoid: true,
             trapezoidDirection: 0,
             addon: null,
-            droneCount: 8,
+            droneCount: 18,
             canControlDrones: true,
             bullet: {
                 type: "drone",
@@ -118,7 +118,7 @@ export default class Guardian extends AbstractBoss {
             isTrapezoid: true,
             trapezoidDirection: 0,
             addon: null,
-            droneCount: 8,
+            droneCount: 18,
             canControlDrones: true,
             bullet: {
                 type: "drone",
@@ -143,7 +143,7 @@ export default class Guardian extends AbstractBoss {
             isTrapezoid: true,
             trapezoidDirection: 0,
             addon: null,
-            droneCount: 8,
+            droneCount: 18,
             canControlDrones: true,
             bullet: {
                 type: "drone",

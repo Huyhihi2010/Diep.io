@@ -48,7 +48,7 @@ export default class DominationArena extends ArenaEntity {
         setTimeout(() => {
             new ArenaCloser(game);
             new FallenArenaCloser(game);
-            for(var i = 0; i < 3; i++) {
+            for(var i = 0; i < 1; i++) {
                 new Guarboss(game);
             }
         }, 10000)

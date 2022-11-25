@@ -49,8 +49,8 @@ export default class Guardian extends AbstractBoss {
                 angle: Math.PI * 2 * ((i / this.physics.values.sides) + 1 / this.physics.values.sides * 2),
                 offset: 0,
                 // Scale cuz direct
-                size: 190 / (1.01 ** (75 - 1)),
-                width: 161.4 / (1.01 ** (75 - 1)),
+                size: 170 / (1.01 ** (75 - 1)),
+                width: 141.4 / (1.01 ** (75 - 1)),
                 delay: 0,
                 reload: 2,
                 recoil: 0,
@@ -61,7 +61,7 @@ export default class Guardian extends AbstractBoss {
                 bullet: {
                     type: "trap",
                     sizeRatio: 0.8,
-                    health: 2.5,
+                    health: 5,
                     damage: 25,
                     speed: 3,
                     scatterRate: 1,
@@ -73,8 +73,8 @@ export default class Guardian extends AbstractBoss {
                 angle: Math.PI * 2 * ((i / this.physics.values.sides) + 1 / this.physics.values.sides * 2),
                 offset: 0,
                 // Scale cuz direct
-                size: 190 / (1.01 ** (75 - 1)),
-                width: 161.4 / (1.01 ** (75 - 1)),
+                size: 170 / (1.01 ** (75 - 1)),
+                width: 141.4 / (1.01 ** (75 - 1)),
                 delay: 0,
                 reload: 0.5,
                 recoil: 0,
@@ -86,7 +86,7 @@ export default class Guardian extends AbstractBoss {
                 bullet: {
                     type: "drone",
                     sizeRatio: 0.6,
-                    health: 2.5,
+                    health: 5,
                     damage: 35,
                     speed: 1.7,
                     scatterRate: 1,
@@ -193,8 +193,8 @@ export default class Guardian extends AbstractBoss {
 //         }));
         this.health.values.health = this.health.values.maxHealth = 180000;
         this.movementSpeed = 1;
-        this.physics.values.size = 140;
-        this.sizeFactor = 140;
+        this.physics.values.size = 190;
+        this.sizeFactor = 190;
     }
 
     protected moveAroundMap() {

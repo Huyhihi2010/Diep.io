@@ -191,8 +191,8 @@ export default class Guardian extends AbstractBoss {
 //                 absorbtionFactor: 1
 //             }
 //         }));
-        this.health.values.health = this.health.values.maxHealth = 21000;
-        this.movementSpeed = 0.4;
+        this.health.values.health = this.health.values.maxHealth = 27000;
+        this.movementSpeed = 1;
     }
 
     protected moveAroundMap() {

@@ -35,7 +35,7 @@ export default class Guardian extends AbstractBoss {
         this.name.values.name = 'Fallen Boss Pentagon';
         this.altName = 'Fallen of the Boss';
         this.style.values.color = Colors.Fallen;
-//         this.relations.values.team = this.game.arena;
+        this.relations.values.team = Colors.Fallen;
         this.physics.values.sides = 5;
         
         for (let i = 0; i < this.physics.values.sides; ++i) {

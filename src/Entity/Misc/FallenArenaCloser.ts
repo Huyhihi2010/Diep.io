@@ -67,7 +67,7 @@ export default class ArenaCloser extends TankBody {
         // Fix all the stats
         def.speed = 1;
 
-        this.damageReduction = 0;
+        this.damageReduction = 500;
         this.damagePerTick = 500;
 
         this.name.values.name = "Fallen Arena Closer";
@@ -75,6 +75,8 @@ export default class ArenaCloser extends TankBody {
         this.style.values.color = Colors.Fallen;
         this.position.values.motion |= MotionFlags.canMoveThroughWalls
         camera.camera.values.player = this;
+        
+        Stat.BodyDamage = 500;
 
         for (let i = Stat.MovementSpeed; i < Stat.BodyDamage; ++i) camera.camera.values.statLevels.values[i] = 7;
 

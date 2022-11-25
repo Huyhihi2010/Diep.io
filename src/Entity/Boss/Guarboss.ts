@@ -62,7 +62,7 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.barrels.push(new Barrel(this, {
-            angle: Math.PI * 0.25,
+            angle: Math.PI * 0.2,
             offset: 0,
             // Scale cuz direct
             size: 100 / (1.01 ** (75 - 1)),
@@ -87,7 +87,7 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.barrels.push(new Barrel(this, {
-            angle: -Math.PI * 0.25,
+            angle: -Math.PI * 0.2,
             offset: 0,
             // Scale cuz direct
             size: 100 / (1.01 ** (75 - 1)),

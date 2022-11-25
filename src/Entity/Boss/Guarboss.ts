@@ -20,8 +20,47 @@ import GameServer from "../../Game";
 import Barrel from "../Tank/Barrel";
 import AbstractBoss from "./AbstractBoss";
 
+import AutoTurret, { AutoTurretDefinition } from "../Tank/AutoTurret";
+import { BarrelDefinition } from "../../Const/TankDefinitions";
+
 import { Colors, Tank } from "../../Const/Enums";
 import { AIState } from "../AI";
+
+const MountedTurretDefinition: BarrelDefinition = {
+    ...AutoTurretDefinition,
+    bullet: {
+        ...AutoTurretDefinition.bullet,
+        speed: 2,
+        damage: 25,
+        health: 12.5,
+        color: Colors.EnemyCrasher
+    }
+};
+
+const DefenderDefinition: BarrelDefinition = {
+    angle: 0,
+    offset: 0,
+    size: 120,
+    width: 71.4,
+    delay: 0,
+    reload: 4,
+    recoil: 2,
+    isTrapezoid: false,
+    trapezoidDirection: 0,
+    addon: "trapLauncher",
+    forceFire: true,
+    bullet: {
+        type: "trap",
+        sizeRatio: 0.8,
+        health: 12.5,
+        damage: 40,
+        speed: 3,
+        scatterRate: 1,
+        lifeLength: 5,
+        absorbtionFactor: 1,
+        color: Colors.EnemyCrasher
+    }
+}
 
 /**
  * Class which represents the boss "Guarboss"
@@ -35,6 +74,33 @@ export default class Guardian extends AbstractBoss {
         this.style.values.color = Colors.EnemyCrasher;
         this.relations.values.team = this.game.arena;
         this.physics.values.sides = 4;
+        
+        for (let i = 0; i < 4; ++i) {
+            // Add trap launcher
+            this.trappers.push(new Barrel(this, {
+                ...DefenderDefinition,
+                angle: Math.PI * 2 * ((i / 4) + 1 / 6)
+            }));
+
+            // TODO:
+            // Maybe make this into a class of itself - DefenderAutoTurret
+            const base = new AutoTurret(this, MountedTurretDefinition);
+
+            const angle = base.ai.inputs.mouse.angle = Math.PI * 2 * (i / 3);
+
+            base.position.values.y = this.physics.values.size * Math.sin(angle) * 0.6;
+            base.position.values.x = this.physics.values.size * Math.cos(angle) * 0.6;
+
+            base.physics.values.objectFlags |= MotionFlags.absoluteRotation;
+
+            const tickBase = base.tick;
+            base.tick = (tick: number) => {
+                base.position.y = this.physics.values.size * Math.sin(angle) * 0.6;
+                base.position.x = this.physics.values.size * Math.cos(angle) * 0.6;
+
+                tickBase.call(base, tick);
+            }
+        }
 
         this.barrels.push(new Barrel(this, {
             angle: Math.PI,

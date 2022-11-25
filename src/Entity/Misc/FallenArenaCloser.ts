@@ -41,9 +41,9 @@ export default class FallenArenaCloser extends TankBody {
         camera.setLevel = function(level) {
             setLevel.call(this, level);
 
-            this.sizeFactor *= (ArenaCloser.BASE_SIZE / 50);
+            this.sizeFactor *= (FallenArenaCloser.BASE_SIZE / 50);
         }
-        camera.sizeFactor = (ArenaCloser.BASE_SIZE / 50);
+        camera.sizeFactor = (FallenArenaCloser.BASE_SIZE / 50);
 
         super(game, camera, inputs);
 
@@ -55,7 +55,7 @@ export default class FallenArenaCloser extends TankBody {
 
         this.health.values.healthbar |= HealthbarFlags.hidden;
 
-        this.setTank(Tank.ArenaCloser);
+        this.setTank(Tank.FallenArenaCloser);
 
         const def = (this.definition = Object.assign({}, this.definition));
         def.maxHealth = 100000;

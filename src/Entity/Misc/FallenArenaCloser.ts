@@ -26,7 +26,7 @@ import { AI, AIState, Inputs } from "../AI";
 /**
  * Represents the Arena Closers that end the game.
  */
-export default class ArenaCloser extends TankBody {
+export default class FallenArenaCloser extends TankBody {
     /** Size of a level 0 Arena Closer. */
     public static BASE_SIZE = 225;
     

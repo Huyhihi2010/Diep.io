@@ -36,9 +36,9 @@ export default class Guardian extends AbstractBoss {
         this.altName = 'Guarboss of the Pentagons';
         this.style.values.color = Colors.EnemyCrasher;
         this.relations.values.team = this.game.arena;
-        this.physics.values.sides = 4;
+        this.physics.values.sides = 6;
         
-        for (let i = 0; i < 8; ++i) {
+        for (let i = 0; i < this.physics.values.sides; ++i) {
             // Add trap launcher
 //             this.trappers.push(new Barrel(this, {
 //                 ...DefenderDefinition,
@@ -46,7 +46,7 @@ export default class Guardian extends AbstractBoss {
 //             }));
 
             this.barrels.push(new Barrel(this, {
-                angle: Math.PI * 2 * ((i / 8) + 1 / 8),
+                angle: Math.PI * 2 * ((i / this.physics.values.sides) + 1 / this.physics.values.sides * 2),
                 offset: 0,
                 // Scale cuz direct
                 size: 120 / (1.01 ** (75 - 1)),
@@ -69,10 +69,8 @@ export default class Guardian extends AbstractBoss {
                     absorbtionFactor: 1
                 }
             }));
-        }
-
-        this.barrels.push(new Barrel(this, {
-            angle: Math.PI,
+            this.barrels.push(new Barrel(this, {
+            angle: Math.PI * 2 * ((i / this.physics.values.sides) + 1 / this.physics.values.sides * 2),
             offset: 0,
             // Scale cuz direct
             size: 120 / (1.01 ** (75 - 1)),
@@ -96,101 +94,103 @@ export default class Guardian extends AbstractBoss {
                 absorbtionFactor: 1
             }
         }));
-        this.barrels.push(new Barrel(this, {
-            angle: Math.PI * 0.5,
-            offset: 0,
-            // Scale cuz direct
-            size: 120 / (1.01 ** (75 - 1)),
-            width: 91.4 / (1.01 ** (75 - 1)),
-            delay: 0,
-            reload: 5,
-            recoil: 0,
-            isTrapezoid: true,
-            trapezoidDirection: 0,
-            addon: null,
-            droneCount: 18,
-            canControlDrones: true,
-            bullet: {
-                type: "drone",
-                sizeRatio: 0.6,
-                health: 2.5,
-                damage: 35,
-                speed: 1.7,
-                scatterRate: 1,
-                lifeLength: Infinity,
-                absorbtionFactor: 1
-            }
+        }
+
+//         this.barrels.push(new Barrel(this, {
+//             angle: Math.PI * 0.5,
+//             offset: 0,
+//             // Scale cuz direct
 //             size: 120 / (1.01 ** (75 - 1)),
 //             width: 91.4 / (1.01 ** (75 - 1)),
 //             delay: 0,
-//             reload: 0.5,
+//             reload: 5,
 //             recoil: 0,
 //             isTrapezoid: true,
 //             trapezoidDirection: 0,
 //             addon: null,
-//             droneCount: 50,
+//             droneCount: 18,
 //             canControlDrones: true,
 //             bullet: {
 //                 type: "drone",
 //                 sizeRatio: 0.6,
 //                 health: 2.5,
-//                 damage: 10,
+//                 damage: 35,
 //                 speed: 1.7,
 //                 scatterRate: 1,
-//                 lifeLength: 1,
+//                 lifeLength: Infinity,
 //                 absorbtionFactor: 1
 //             }
-        }));
-        this.barrels.push(new Barrel(this, {
-            angle: -Math.PI * 0.5,
-            offset: 0,
-            // Scale cuz direct
-            size: 120 / (1.01 ** (75 - 1)),
-            width: 91.4 / (1.01 ** (75 - 1)),
-            delay: 0,
-            reload: 5,
-            recoil: 0,
-            isTrapezoid: true,
-            trapezoidDirection: 0,
-            addon: null,
-            droneCount: 18,
-            canControlDrones: true,
-            bullet: {
-                type: "drone",
-                sizeRatio: 0.6,
-                health: 2.5,
-                damage: 35,
-                speed: 1.7,
-                scatterRate: 1,
-                lifeLength: Infinity,
-                absorbtionFactor: 1
-            }
-        }));
-        this.barrels.push(new Barrel(this, {
-            angle: Math.PI * 2,
-            offset: 0,
-            // Scale cuz direct
-            size: 120 / (1.01 ** (75 - 1)),
-            width: 91.4 / (1.01 ** (75 - 1)),
-            delay: 0,
-            reload: 5,
-            recoil: 0,
-            isTrapezoid: true,
-            trapezoidDirection: 0,
-            addon: null,
-            droneCount: 18,
-            canControlDrones: true,
-            bullet: {
-                type: "drone",
-                sizeRatio: 0.6,
-                health: 2.5,
-                damage: 35,
-                speed: 1.7,
-                scatterRate: 1,
-                lifeLength: Infinity,
-                absorbtionFactor: 1
-            }
-        }));
+// //             size: 120 / (1.01 ** (75 - 1)),
+// //             width: 91.4 / (1.01 ** (75 - 1)),
+// //             delay: 0,
+// //             reload: 0.5,
+// //             recoil: 0,
+// //             isTrapezoid: true,
+// //             trapezoidDirection: 0,
+// //             addon: null,
+// //             droneCount: 50,
+// //             canControlDrones: true,
+// //             bullet: {
+// //                 type: "drone",
+// //                 sizeRatio: 0.6,
+// //                 health: 2.5,
+// //                 damage: 10,
+// //                 speed: 1.7,
+// //                 scatterRate: 1,
+// //                 lifeLength: 1,
+// //                 absorbtionFactor: 1
+// //             }
+//         }));
+//         this.barrels.push(new Barrel(this, {
+//             angle: -Math.PI * 0.5,
+//             offset: 0,
+//             // Scale cuz direct
+//             size: 120 / (1.01 ** (75 - 1)),
+//             width: 91.4 / (1.01 ** (75 - 1)),
+//             delay: 0,
+//             reload: 5,
+//             recoil: 0,
+//             isTrapezoid: true,
+//             trapezoidDirection: 0,
+//             addon: null,
+//             droneCount: 18,
+//             canControlDrones: true,
+//             bullet: {
+//                 type: "drone",
+//                 sizeRatio: 0.6,
+//                 health: 2.5,
+//                 damage: 35,
+//                 speed: 1.7,
+//                 scatterRate: 1,
+//                 lifeLength: Infinity,
+//                 absorbtionFactor: 1
+//             }
+//         }));
+//         this.barrels.push(new Barrel(this, {
+//             angle: Math.PI * 2,
+//             offset: 0,
+//             // Scale cuz direct
+//             size: 120 / (1.01 ** (75 - 1)),
+//             width: 91.4 / (1.01 ** (75 - 1)),
+//             delay: 0,
+//             reload: 5,
+//             recoil: 0,
+//             isTrapezoid: true,
+//             trapezoidDirection: 0,
+//             addon: null,
+//             droneCount: 18,
+//             canControlDrones: true,
+//             bullet: {
+//                 type: "drone",
+//                 sizeRatio: 0.6,
+//                 health: 2.5,
+//                 damage: 35,
+//                 speed: 1.7,
+//                 scatterRate: 1,
+//                 lifeLength: Infinity,
+//                 absorbtionFactor: 1
+//             }
+//         }));
         this.health.values.health = this.health.values.maxHealth = 21000;
         this.movementSpeed = 0.4;
     }

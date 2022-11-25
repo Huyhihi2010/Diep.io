@@ -43,7 +43,7 @@ export default class Guardian extends AbstractBoss {
             size: 100 / (1.01 ** (75 - 1)),
             width: 71.4 / (1.01 ** (75 - 1)),
             delay: 0,
-            reload: 0.25,
+            reload: 0.5,
             recoil: 2,
             isTrapezoid: true,
             trapezoidDirection: 0,
@@ -54,7 +54,7 @@ export default class Guardian extends AbstractBoss {
                 type: "drone",
                 sizeRatio: 0.6,
                 health: 2.5,
-                damage: 1,
+                damage: 10,
                 speed: 1.7,
                 scatterRate: 1,
                 lifeLength: 1,
@@ -62,13 +62,13 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.barrels.push(new Barrel(this, {
-            angle: Math.PI * 0.75,
+            angle: Math.PI * 0.25,
             offset: 0,
             // Scale cuz direct
             size: 100 / (1.01 ** (75 - 1)),
             width: 71.4 / (1.01 ** (75 - 1)),
             delay: 0,
-            reload: 0.25,
+            reload: 0.5,
             recoil: 0,
             isTrapezoid: true,
             trapezoidDirection: 0,
@@ -79,7 +79,7 @@ export default class Guardian extends AbstractBoss {
                 type: "drone",
                 sizeRatio: 0.6,
                 health: 2.5,
-                damage: 1,
+                damage: 10,
                 speed: 1.7,
                 scatterRate: 1,
                 lifeLength: 1,
@@ -87,13 +87,13 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.barrels.push(new Barrel(this, {
-            angle: -Math.PI * 0.75,
+            angle: -Math.PI * 0.25,
             offset: 0,
             // Scale cuz direct
             size: 100 / (1.01 ** (75 - 1)),
             width: 71.4 / (1.01 ** (75 - 1)),
             delay: 0,
-            reload: 0.25,
+            reload: 0.5,
             recoil: 0,
             isTrapezoid: true,
             trapezoidDirection: 0,
@@ -104,7 +104,7 @@ export default class Guardian extends AbstractBoss {
                 type: "drone",
                 sizeRatio: 0.6,
                 health: 2.5,
-                damage: 1,
+                damage: 10,
                 speed: 1.7,
                 scatterRate: 1,
                 lifeLength: 1,

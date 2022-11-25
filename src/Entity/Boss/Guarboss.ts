@@ -191,7 +191,7 @@ export default class Guardian extends AbstractBoss {
 //                 absorbtionFactor: 1
 //             }
 //         }));
-        this.health.values.health = this.health.values.maxHealth = 27000;
+        this.health.values.health = this.health.values.maxHealth = 90000;
         this.movementSpeed = 1;
     }
 

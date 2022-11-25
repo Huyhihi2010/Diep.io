@@ -50,7 +50,7 @@ export default class DominationArena extends ArenaEntity {
         this.updateBounds(arenaSize * 2, arenaSize * 2)
         
         setTimeout(() => {
-            for(var i = 0; i < 20; i++) {
+            for(var i = 0; i < 1; i++) {
                 new ArenaCloser(game);
             }
         }, 120000)

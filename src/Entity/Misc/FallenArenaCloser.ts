@@ -67,8 +67,8 @@ export default class ArenaCloser extends TankBody {
         // Fix all the stats
         def.speed = 1;
 
-        this.damageReduction = 500;
-        this.damagePerTick = 500;
+        this.damageReduction = 0;
+        this.damagePerTick = 5000;
 
         this.name.values.name = "Fallen Arena Closer";
         this.physics.values.absorbtionFactor = 0;

@@ -46,18 +46,18 @@ export default class Guardian extends AbstractBoss {
 //             }));
 
             this.barrels.push(new Barrel(this, {
-                angle: Math.PI * 2 * ((i / 4) + 1 / 6),
+                angle: Math.PI * 2 * ((i / 4) + 1 / 8),
                 offset: 0,
                 // Scale cuz direct
                 size: 120 / (1.01 ** (75 - 1)),
                 width: 91.4 / (1.01 ** (75 - 1)),
                 delay: 0,
-                reload: 5,
+                reload: 1,
                 recoil: 0,
                 isTrapezoid: true,
                 trapezoidDirection: 0,
                 addon: "trapLauncher",
-                canControlDrones: true,
+                canControlDrones: false,
                 bullet: {
                     type: "trap",
                     sizeRatio: 0.8,

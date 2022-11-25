@@ -76,7 +76,7 @@ export default class TestingArena extends ArenaEntity {
         setInterval(() => {
             new Guardian(game);
             new AbstractBoss(game);
-            new Summoner(game);
+//             new Summoner(game);
             new FallenMegaTrapper(game);
             new FallenAC(game);
             new FallenBooster(game);

@@ -65,16 +65,17 @@ export default class TestingArena extends ArenaEntity {
 //                 new Summoner(game);
 //             }
 //         }, 60000)
+        
+        new Guarboss(game);
 
         setInterval(() => {
 //             new Guardian(game);
-            new Guarboss(game);
-            new AbstractBoss(game);
+           // new AbstractBoss(game);
 //             new Summoner(game);
 //             new FallenMegaTrapper(game);
 //             new FallenAC(game);
 //             new FallenBooster(game);
-//             new FallenOverlord(game);
+            new FallenOverlord(game);
 //             new FallenSpike(game);
         }, 8000)
 

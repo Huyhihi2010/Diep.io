@@ -34,7 +34,7 @@ export default class Guardian extends AbstractBoss {
         this.altName = 'Guarboss of the Pentagons';
         this.style.values.color = Colors.EnemyCrasher;
         this.relations.values.team = this.game.arena;
-        this.physics.values.sides = 3;
+        this.physics.values.sides = 4;
 
         this.barrels.push(new Barrel(this, {
             angle: Math.PI,
@@ -62,7 +62,7 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.barrels.push(new Barrel(this, {
-            angle: Math.PI * 0.35,
+            angle: Math.PI * 0.5,
             offset: 0,
             // Scale cuz direct
             size: 100 / (1.01 ** (75 - 1)),
@@ -87,7 +87,7 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.barrels.push(new Barrel(this, {
-            angle: -Math.PI * 0.35,
+            angle: -Math.PI * 0.5,
             offset: 0,
             // Scale cuz direct
             size: 100 / (1.01 ** (75 - 1)),
@@ -115,10 +115,10 @@ export default class Guardian extends AbstractBoss {
             angle: -Math.PI,
             offset: 0,
             // Scale cuz direct
-            size: 120 / (1.01 ** (75 - 1)),
-            width: 91.4 / (1.01 ** (75 - 1)),
+            size: 100 / (1.01 ** (75 - 1)),
+            width: 71.4 / (1.01 ** (75 - 1)),
             delay: 0,
-            reload: 1,
+            reload: 0.5,
             recoil: 0,
             isTrapezoid: true,
             trapezoidDirection: 0,
@@ -126,16 +126,17 @@ export default class Guardian extends AbstractBoss {
             droneCount: 50,
             canControlDrones: true,
             bullet: {
-                type: "bullet",
-                sizeRatio: 1,
-                health: 25,
-                damage: 50,
-                speed: 5,
+                type: "drone",
+                sizeRatio: 0.6,
+                health: 2.5,
+                damage: 10,
+                speed: 1.7,
                 scatterRate: 1,
                 lifeLength: 1,
                 absorbtionFactor: 1
             }
         }));
+        this.health.values.health = this.health.values.maxHealth = 10000;
     }
 
     protected moveAroundMap() {

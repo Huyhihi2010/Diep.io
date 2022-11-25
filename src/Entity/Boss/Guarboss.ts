@@ -115,8 +115,8 @@ export default class Guardian extends AbstractBoss {
             angle: -Math.PI,
             offset: 0,
             // Scale cuz direct
-            size: 100,
-            width: 71.4,
+            size: 120 / (1.01 ** (75 - 1)),
+            width: 91.4 / (1.01 ** (75 - 1)),
             delay: 0,
             reload: 1,
             recoil: 0,

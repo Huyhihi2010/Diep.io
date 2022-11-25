@@ -36,7 +36,7 @@ export default class Guardian extends AbstractBoss {
         this.altName = 'Guarboss of the Pentagons';
         this.style.values.color = Colors.EnemyCrasher;
         this.relations.values.team = this.game.arena;
-        this.physics.values.sides = 6;
+        this.physics.values.sides = 4;
         
         for (let i = 0; i < this.physics.values.sides; ++i) {
             // Add trap launcher

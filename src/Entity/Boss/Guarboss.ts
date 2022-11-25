@@ -32,8 +32,8 @@ export default class Guardian extends AbstractBoss {
     public constructor(game: GameServer) {
         super(game);
 
-        this.name.values.name = 'Fallen Pentagon';
-        this.altName = 'Fallen Guar of the Boss';
+        this.name.values.name = 'Fallen Boss Pentagon';
+        this.altName = 'Fallen of the Boss';
         this.style.values.color = Colors.Fallen;
 //         this.relations.values.team = this.game.arena;
         this.physics.values.sides = 5;
@@ -191,7 +191,7 @@ export default class Guardian extends AbstractBoss {
 //                 absorbtionFactor: 1
 //             }
 //         }));
-        this.health.values.health = this.health.values.maxHealth = 90000;
+        this.health.values.health = this.health.values.maxHealth = 1800000;
         this.movementSpeed = 1;
     }
 

@@ -37,6 +37,7 @@ import FallenBooster from "../../Entity/Boss/FallenBooster";
 import Summoner from "../../Entity/Boss/Summoner";
 import AbstractBoss from "../../Entity/Boss/AbstractBoss";
 import ArenaCloser from "../../Entity/Misc/ArenaCloser";
+import FallenArenaCloser from "../../Entity/Misc/FallenArenaCloser";
 /**
  * Only spawns crashers
  */
@@ -72,6 +73,9 @@ export default class TestingArena extends ArenaEntity {
         setInterval(() => {
             new FallenGura(game);
         }, 64000)
+        setTimeout(() => {
+            new FallenArenaCloser(game);
+        }, 64000);
 
         setInterval(() => {
             new Guardian(game);

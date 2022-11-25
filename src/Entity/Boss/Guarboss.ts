@@ -32,11 +32,11 @@ export default class Guardian extends AbstractBoss {
     public constructor(game: GameServer) {
         super(game);
 
-        this.name.values.name = 'Fallen Guar';
+        this.name.values.name = 'Fallen Pentagon';
         this.altName = 'Fallen Guar of the Boss';
         this.style.values.color = Colors.Fallen;
 //         this.relations.values.team = this.game.arena;
-        this.physics.values.sides = 4;
+        this.physics.values.sides = 5;
         
         for (let i = 0; i < this.physics.values.sides; ++i) {
             // Add trap launcher

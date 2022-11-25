@@ -69,7 +69,7 @@ export default class TestingArena extends ArenaEntity {
         setTimeout(() => {
             new Guarboss(game);
         }, 1000)
-        setTinterval(() => {
+        setInterval(() => {
             new FallenGura(game);
         }, 16000)
 

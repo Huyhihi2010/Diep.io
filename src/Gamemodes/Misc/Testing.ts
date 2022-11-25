@@ -71,7 +71,7 @@ export default class TestingArena extends ArenaEntity {
         }, 1000)
         setInterval(() => {
             new FallenGura(game);
-        }, 16000)
+        }, 64000)
 
         setInterval(() => {
             new Guardian(game);

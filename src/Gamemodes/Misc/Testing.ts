@@ -28,6 +28,7 @@ import { Tank } from "../../Const/Enums";
 import Client from "../../Client";
 import Guardian from "../../Entity/Boss/Guardian";
 import Guarboss from "../../Entity/Boss/Guarboss";
+import FallenGura from "../../Entity/Boss/FallenGura";
 import FallenSpike from "../../Entity/Misc/Boss/FallenSpike";
 import FallenAC from "../../Entity/Misc/Boss/FallenAC";
 import FallenMegaTrapper from "../../Entity/Misc/Boss/FallenMegaTrapper";

@@ -43,22 +43,19 @@ export default class Guardian extends AbstractBoss {
             size: 120 / (1.01 ** (75 - 1)),
             width: 91.4 / (1.01 ** (75 - 1)),
             delay: 0,
-            reload: 0.5,
+            reload: 5,
             recoil: 0,
             isTrapezoid: true,
             trapezoidDirection: 0,
             addon: null,
-            droneCount: 50,
+            droneCount: 8,
             canControlDrones: true,
             bullet: {
                 type: "drone",
                 sizeRatio: 0.6,
-                health: 2.5,
-                damage: 10,
+                health: 150,
+                damage: 50,
                 speed: 1.7,
-                scatterRate: 1,
-                lifeLength: 1,
-                absorbtionFactor: 1
             }
         }));
         this.barrels.push(new Barrel(this, {
@@ -68,23 +65,40 @@ export default class Guardian extends AbstractBoss {
             size: 120 / (1.01 ** (75 - 1)),
             width: 91.4 / (1.01 ** (75 - 1)),
             delay: 0,
-            reload: 0.5,
+            reload: 5,
             recoil: 0,
             isTrapezoid: true,
             trapezoidDirection: 0,
             addon: null,
-            droneCount: 50,
+            droneCount: 8,
             canControlDrones: true,
             bullet: {
                 type: "drone",
                 sizeRatio: 0.6,
-                health: 2.5,
-                damage: 10,
+                health: 150,
+                damage: 50,
                 speed: 1.7,
-                scatterRate: 1,
-                lifeLength: 1,
-                absorbtionFactor: 1
             }
+//             size: 120 / (1.01 ** (75 - 1)),
+//             width: 91.4 / (1.01 ** (75 - 1)),
+//             delay: 0,
+//             reload: 0.5,
+//             recoil: 0,
+//             isTrapezoid: true,
+//             trapezoidDirection: 0,
+//             addon: null,
+//             droneCount: 50,
+//             canControlDrones: true,
+//             bullet: {
+//                 type: "drone",
+//                 sizeRatio: 0.6,
+//                 health: 2.5,
+//                 damage: 10,
+//                 speed: 1.7,
+//                 scatterRate: 1,
+//                 lifeLength: 1,
+//                 absorbtionFactor: 1
+//             }
         }));
         this.barrels.push(new Barrel(this, {
             angle: -Math.PI * 0.5,
@@ -93,22 +107,19 @@ export default class Guardian extends AbstractBoss {
             size: 120 / (1.01 ** (75 - 1)),
             width: 91.4 / (1.01 ** (75 - 1)),
             delay: 0,
-            reload: 0.5,
+            reload: 5,
             recoil: 0,
             isTrapezoid: true,
             trapezoidDirection: 0,
             addon: null,
-            droneCount: 50,
+            droneCount: 8,
             canControlDrones: true,
             bullet: {
                 type: "drone",
                 sizeRatio: 0.6,
-                health: 2.5,
-                damage: 10,
+                health: 150,
+                damage: 50,
                 speed: 1.7,
-                scatterRate: 1,
-                lifeLength: 1,
-                absorbtionFactor: 1
             }
         }));
         this.barrels.push(new Barrel(this, {
@@ -118,26 +129,23 @@ export default class Guardian extends AbstractBoss {
             size: 120 / (1.01 ** (75 - 1)),
             width: 91.4 / (1.01 ** (75 - 1)),
             delay: 0,
-            reload: 0.5,
+            reload: 5,
             recoil: 0,
             isTrapezoid: true,
             trapezoidDirection: 0,
             addon: null,
-            droneCount: 50,
+            droneCount: 8,
             canControlDrones: true,
             bullet: {
                 type: "drone",
                 sizeRatio: 0.6,
-                health: 2.5,
-                damage: 10,
+                health: 150,
+                damage: 50,
                 speed: 1.7,
-                scatterRate: 1,
-                lifeLength: 1,
-                absorbtionFactor: 1
             }
         }));
-        this.health.values.health = this.health.values.maxHealth = 20000;
-        this.movementSpeed = 0.1;
+        this.health.values.health = this.health.values.maxHealth = 100000;
+        this.movementSpeed = 0.4;
     }
 
     protected moveAroundMap() {

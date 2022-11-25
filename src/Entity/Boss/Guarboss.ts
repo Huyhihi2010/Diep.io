@@ -40,8 +40,8 @@ export default class Guardian extends AbstractBoss {
             angle: Math.PI,
             offset: 0,
             // Scale cuz direct
-            size: 100 / (1.01 ** (75 - 1)),
-            width: 71.4 / (1.01 ** (75 - 1)),
+            size: 120 / (1.01 ** (75 - 1)),
+            width: 91.4 / (1.01 ** (75 - 1)),
             delay: 0,
             reload: 0.5,
             recoil: 0,
@@ -65,8 +65,8 @@ export default class Guardian extends AbstractBoss {
             angle: Math.PI * 0.5,
             offset: 0,
             // Scale cuz direct
-            size: 100 / (1.01 ** (75 - 1)),
-            width: 71.4 / (1.01 ** (75 - 1)),
+            size: 120 / (1.01 ** (75 - 1)),
+            width: 91.4 / (1.01 ** (75 - 1)),
             delay: 0,
             reload: 0.5,
             recoil: 0,
@@ -90,8 +90,8 @@ export default class Guardian extends AbstractBoss {
             angle: -Math.PI * 0.5,
             offset: 0,
             // Scale cuz direct
-            size: 100 / (1.01 ** (75 - 1)),
-            width: 71.4 / (1.01 ** (75 - 1)),
+            size: 120 / (1.01 ** (75 - 1)),
+            width: 91.4 / (1.01 ** (75 - 1)),
             delay: 0,
             reload: 0.5,
             recoil: 0,
@@ -112,11 +112,11 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.barrels.push(new Barrel(this, {
-            angle: -Math.PI,
+            angle: Math.PI * 2,
             offset: 0,
             // Scale cuz direct
-            size: 100 / (1.01 ** (75 - 1)),
-            width: 71.4 / (1.01 ** (75 - 1)),
+            size: 120 / (1.01 ** (75 - 1)),
+            width: 91.4 / (1.01 ** (75 - 1)),
             delay: 0,
             reload: 0.5,
             recoil: 0,
@@ -136,8 +136,8 @@ export default class Guardian extends AbstractBoss {
                 absorbtionFactor: 1
             }
         }));
-        this.health.values.health = this.health.values.maxHealth = 10000;
-        this.movementSpeed = 2;
+        this.health.values.health = this.health.values.maxHealth = 20000;
+        this.movementSpeed = 0.1;
     }
 
     protected moveAroundMap() {

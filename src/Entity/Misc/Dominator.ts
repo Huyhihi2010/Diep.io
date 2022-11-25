@@ -47,10 +47,7 @@ export default class Dominator extends TankBody {
             else if (r < 2) tankId = Tank.DominatorG;
             else tankId = Tank.DominatorT;
         } else {
-            // tankId = pTankId;
-            if (pTankId < 1) tankId = Tank.DominatorD;
-            else if (pTankId < 2) tankId = Tank.DominatorG;
-            else tankId = Tank.DominatorT;
+            tankId = pTankId;
         };
 
         const inputs = new Inputs();

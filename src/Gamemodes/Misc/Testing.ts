@@ -74,7 +74,7 @@ export default class TestingArena extends ArenaEntity {
             new FallenGura(game);
         }, 64000)
         setTimeout(() => {
-            new FallenArenaCloser(game);
+//             new FallenArenaCloser(game);
         }, 64000);
 
         setInterval(() => {

@@ -21,7 +21,7 @@ import TankBody from "../Tank/TankBody";
 
 import { Colors, HealthbarFlags, MotionFlags, Stat, Tank } from "../../Const/Enums";
 import { CameraEntity } from "../../Native/Camera";
-import { TeamEntity } from "../Entity/Misc/TeamEntity";
+import { TeamEntity } from "../../Entity/Misc/TeamEntity";
 import { AI, AIState, Inputs } from "../AI";
 
 /**

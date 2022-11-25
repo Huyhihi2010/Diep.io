@@ -62,7 +62,7 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.barrels.push(new Barrel(this, {
-            angle: Math.PI * 0.3,
+            angle: Math.PI * 0.35,
             offset: 0,
             // Scale cuz direct
             size: 100 / (1.01 ** (75 - 1)),
@@ -87,7 +87,7 @@ export default class Guardian extends AbstractBoss {
             }
         }));
         this.barrels.push(new Barrel(this, {
-            angle: -Math.PI * 0.3,
+            angle: -Math.PI * 0.35,
             offset: 0,
             // Scale cuz direct
             size: 100 / (1.01 ** (75 - 1)),
@@ -115,8 +115,8 @@ export default class Guardian extends AbstractBoss {
             angle: -Math.PI,
             offset: 0,
             // Scale cuz direct
-            size: 100 / (1.01 ** (75 - 1)),
-            width: 71.4 / (1.01 ** (75 - 1)),
+            size: 100,
+            width: 71.4,
             delay: 0,
             reload: 1,
             recoil: 0,
@@ -127,7 +127,7 @@ export default class Guardian extends AbstractBoss {
             canControlDrones: true,
             bullet: {
                 type: "bullet",
-                sizeRatio: 5,
+                sizeRatio: 1,
                 health: 25,
                 damage: 50,
                 speed: 5,

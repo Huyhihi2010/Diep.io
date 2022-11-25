@@ -38,7 +38,7 @@ export default class Guardian extends AbstractBoss {
         this.relations.values.team = this.game.arena;
         this.physics.values.sides = 4;
         
-        for (let i = 0; i < 4; ++i) {
+        for (let i = 0; i < 8; ++i) {
             // Add trap launcher
 //             this.trappers.push(new Barrel(this, {
 //                 ...DefenderDefinition,
@@ -46,15 +46,15 @@ export default class Guardian extends AbstractBoss {
 //             }));
 
             this.barrels.push(new Barrel(this, {
-                angle: Math.PI * 2 * ((i / 4) + 1 / 8),
+                angle: Math.PI * 2 * ((i / 8) + 1 / 8),
                 offset: 0,
                 // Scale cuz direct
                 size: 120 / (1.01 ** (75 - 1)),
                 width: 91.4 / (1.01 ** (75 - 1)),
                 delay: 0,
-                reload: 2,
+                reload: 4,
                 recoil: 0,
-                isTrapezoid: true,
+                isTrapezoid: false,
                 trapezoidDirection: 0,
                 addon: "trapLauncher",
                 canControlDrones: false,

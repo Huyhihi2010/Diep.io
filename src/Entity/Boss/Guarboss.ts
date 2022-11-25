@@ -54,7 +54,7 @@ export default class Guardian extends AbstractBoss {
                 type: "drone",
                 sizeRatio: 0.6,
                 health: 2.5,
-                damage: 5,
+                damage: 35,
                 speed: 1.7,
                 scatterRate: 1,
                 lifeLength: Infinity,
@@ -79,7 +79,7 @@ export default class Guardian extends AbstractBoss {
                 type: "drone",
                 sizeRatio: 0.6,
                 health: 2.5,
-                damage: 5,
+                damage: 35,
                 speed: 1.7,
                 scatterRate: 1,
                 lifeLength: Infinity,
@@ -124,7 +124,7 @@ export default class Guardian extends AbstractBoss {
                 type: "drone",
                 sizeRatio: 0.6,
                 health: 2.5,
-                damage: 5,
+                damage: 35,
                 speed: 1.7,
                 scatterRate: 1,
                 lifeLength: Infinity,
@@ -149,14 +149,14 @@ export default class Guardian extends AbstractBoss {
                 type: "drone",
                 sizeRatio: 0.6,
                 health: 2.5,
-                damage: 5,
+                damage: 35,
                 speed: 1.7,
                 scatterRate: 1,
                 lifeLength: Infinity,
                 absorbtionFactor: 1
             }
         }));
-        this.health.values.health = this.health.values.maxHealth = 100000;
+        this.health.values.health = this.health.values.maxHealth = 21000;
         this.movementSpeed = 0.4;
     }
 

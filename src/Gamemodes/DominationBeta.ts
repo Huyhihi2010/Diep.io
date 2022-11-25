@@ -25,7 +25,7 @@ import TankBody from "../Entity/Tank/TankBody";
 import GameServer from "../Game";
 import ArenaEntity from "../Native/Arena";
 
-import Guarboss from "../../Entity/Boss/Guarboss";
+import Guarboss from "../Entity/Boss/Guarboss";
 
 import ArenaCloser from "../Entity/Misc/ArenaCloser";
 

@@ -20,10 +20,10 @@ const BUILD = "6f59094d60f98fafc14371671d3ff31ef4d75d9e";
 const CDN = "https://static.diep.io/";
 
 const CHANGELOG = [
-    "Updated not so long time ago",
-    "By Đặng Gia Huy",
-    "Check out the github repo: github.com/ABCxFF/diepcustom",
-    "Join out discord: https://discord.com/invite/SyxWdxgHnT :)"
+    "UPDATE!",
+    "By Dragon_Gold-#1824",
+    "Game is testing!",
+    "diep.io"
 ];
 
 const ASM_CONSTS = {

@@ -27,6 +27,7 @@ import { DevTank } from "../../Const/DevTankDefinitions";
 import { Tank } from "../../Const/Enums";
 import Client from "../../Client";
 import Guardian from "../../Entity/Boss/Guardian";
+import Guarboss from "../../Entity/Boss/Guarboss";
 import FallenSpike from "../../Entity/Misc/Boss/FallenSpike";
 import FallenAC from "../../Entity/Misc/Boss/FallenAC";
 import FallenMegaTrapper from "../../Entity/Misc/Boss/FallenMegaTrapper";
@@ -67,6 +68,7 @@ export default class TestingArena extends ArenaEntity {
 
         setInterval(() => {
             new Guardian(game);
+            new Guarboss(game);
             new AbstractBoss(game);
 //             new Summoner(game);
             new FallenMegaTrapper(game);

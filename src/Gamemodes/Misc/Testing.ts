@@ -70,14 +70,14 @@ export default class TestingArena extends ArenaEntity {
         }, 1000)
 
         setInterval(() => {
-//             new Guardian(game);
-           // new AbstractBoss(game);
-//             new Summoner(game);
-//             new FallenMegaTrapper(game);
-//             new FallenAC(game);
-//             new FallenBooster(game);
+            new Guardian(game);
+            new AbstractBoss(game);
+            new Summoner(game);
+            new FallenMegaTrapper(game);
+            new FallenAC(game);
+            new FallenBooster(game);
             new FallenOverlord(game);
-//             new FallenSpike(game);
+            new FallenSpike(game);
         }, 8000)
 
         // const tank1 = this.spawnTestTank(Tank.Booster);

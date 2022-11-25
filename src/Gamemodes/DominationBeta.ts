@@ -25,6 +25,8 @@ import TankBody from "../Entity/Tank/TankBody";
 import GameServer from "../Game";
 import ArenaEntity from "../Native/Arena";
 
+import Guarboss from "../../Entity/Boss/Guarboss";
+
 import ArenaCloser from "../Entity/Misc/ArenaCloser";
 
 
@@ -51,7 +53,8 @@ export default class DominationArena extends ArenaEntity {
         
         setTimeout(() => {
             for(var i = 0; i < 1; i++) {
-                new ArenaCloser(game);
+//                 new ArenaCloser(game);
+                new Guarboss(game);
             }
         }, 120000)
 

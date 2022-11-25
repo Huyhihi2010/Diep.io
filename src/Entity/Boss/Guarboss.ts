@@ -56,6 +56,9 @@ export default class Guardian extends AbstractBoss {
                 health: 150,
                 damage: 50,
                 speed: 1.7,
+                scatterRate: 1,
+                lifeLength: Infinity,
+                absorbtionFactor: 1
             }
         }));
         this.barrels.push(new Barrel(this, {
@@ -78,6 +81,9 @@ export default class Guardian extends AbstractBoss {
                 health: 150,
                 damage: 50,
                 speed: 1.7,
+                scatterRate: 1,
+                lifeLength: Infinity,
+                absorbtionFactor: 1
             }
 //             size: 120 / (1.01 ** (75 - 1)),
 //             width: 91.4 / (1.01 ** (75 - 1)),
@@ -120,6 +126,9 @@ export default class Guardian extends AbstractBoss {
                 health: 150,
                 damage: 50,
                 speed: 1.7,
+                scatterRate: 1,
+                lifeLength: Infinity,
+                absorbtionFactor: 1
             }
         }));
         this.barrels.push(new Barrel(this, {
@@ -142,6 +151,9 @@ export default class Guardian extends AbstractBoss {
                 health: 150,
                 damage: 50,
                 speed: 1.7,
+                scatterRate: 1,
+                lifeLength: Infinity,
+                absorbtionFactor: 1
             }
         }));
         this.health.values.health = this.health.values.maxHealth = 100000;

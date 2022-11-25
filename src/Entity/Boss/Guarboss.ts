@@ -94,6 +94,31 @@ export default class Guardian extends AbstractBoss {
                     absorbtionFactor: 1
                 }
             }));
+            this.barrels.push(new Barrel(this, {
+                angle: Math.PI * 2 * ((i / this.physics.values.sides) + 1 / this.physics.values.sides),
+                offset: 0,
+                // Scale cuz direct
+                size: 120 / (1.01 ** (75 - 1)),
+                width: 91.4 / (1.01 ** (75 - 1)),
+                delay: 0,
+                reload: 0.2,
+                recoil: 0,
+                isTrapezoid: true,
+                trapezoidDirection: 0,
+                addon: null,
+                droneCount: 50,
+                canControlDrones: true,
+                bullet: {
+                    type: "drone",
+                    sizeRatio: 0.6,
+                    health: 2,
+                    damage: 15,
+                    speed: 1.7,
+                    scatterRate: 1,
+                    lifeLength: 1,
+                    absorbtionFactor: 1
+                }
+            }));
         }
 
 //         this.barrels.push(new Barrel(this, {
@@ -193,8 +218,8 @@ export default class Guardian extends AbstractBoss {
 //         }));
         this.health.values.health = this.health.values.maxHealth = 180000;
         this.movementSpeed = 1;
-        this.physics.values.size = 190;
-        this.sizeFactor = 190;
+        this.physics.values.size = 300;
+        this.sizeFactor = 300;
     }
 
     protected moveAroundMap() {

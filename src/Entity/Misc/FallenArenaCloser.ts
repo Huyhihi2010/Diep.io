@@ -21,12 +21,16 @@ import TankBody from "../Tank/TankBody";
 
 import { Colors, HealthbarFlags, MotionFlags, Stat, Tank } from "../../Const/Enums";
 import { CameraEntity } from "../../Native/Camera";
+import { TeamEntity } from "../Entity/Misc/TeamEntity";
 import { AI, AIState, Inputs } from "../AI";
 
 /**
  * Represents the Arena Closers that end the game.
  */
 export default class ArenaCloser extends TankBody {
+     /** Blue Team entity */
+    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
+    
     /** Size of a level 0 Arena Closer. */
     public static BASE_SIZE = 225;
     
@@ -47,7 +51,7 @@ export default class ArenaCloser extends TankBody {
 
         super(game, camera, inputs);
 
-       this.relations.values.team = game.arena;
+        this.relations.values.team = this.fallenTeam;
 
         this.ai = new AI(this);
         this.ai.inputs = inputs;

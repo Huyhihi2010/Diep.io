@@ -192,7 +192,7 @@ export default class Guardian extends AbstractBoss {
 //             }
 //         }));
         this.health.values.health = this.health.values.maxHealth = 18000;
-        this.movementSpeed = 1;
+        this.movementSpeed = 1.5;
     }
 
     protected moveAroundMap() {

@@ -49,8 +49,8 @@ export default class Guardian extends AbstractBoss {
                 angle: Math.PI * 2 * ((i / this.physics.values.sides) + 1 / this.physics.values.sides * 2),
                 offset: 0,
                 // Scale cuz direct
-                size: 170 / (1.01 ** (75 - 1)),
-                width: 141.4 / (1.01 ** (75 - 1)),
+                size: 120 / (1.01 ** (75 - 1)),
+                width: 91.4 / (1.01 ** (75 - 1)),
                 delay: 0,
                 reload: 2,
                 recoil: 0,
@@ -61,7 +61,7 @@ export default class Guardian extends AbstractBoss {
                 bullet: {
                     type: "trap",
                     sizeRatio: 0.8,
-                    health: 5,
+                    health: 7,
                     damage: 25,
                     speed: 3,
                     scatterRate: 1,
@@ -73,8 +73,8 @@ export default class Guardian extends AbstractBoss {
                 angle: Math.PI * 2 * ((i / this.physics.values.sides) + 1 / this.physics.values.sides * 2),
                 offset: 0,
                 // Scale cuz direct
-                size: 170 / (1.01 ** (75 - 1)),
-                width: 141.4 / (1.01 ** (75 - 1)),
+                size: 120 / (1.01 ** (75 - 1)),
+                width: 91.4 / (1.01 ** (75 - 1)),
                 delay: 0,
                 reload: 0.5,
                 recoil: 0,
@@ -86,7 +86,7 @@ export default class Guardian extends AbstractBoss {
                 bullet: {
                     type: "drone",
                     sizeRatio: 0.6,
-                    health: 5,
+                    health: 7,
                     damage: 35,
                     speed: 1.7,
                     scatterRate: 1,

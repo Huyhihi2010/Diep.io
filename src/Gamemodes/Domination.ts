@@ -25,6 +25,10 @@ import TankBody from "../Entity/Tank/TankBody";
 import GameServer from "../Game";
 import ArenaEntity from "../Native/Arena";
 
+import ArenaCloser from "../Entity/Misc/ArenaCloser";
+import FallenArenaCloser from "../Entity/Misc/FallenArenaCloser";
+import Guarboss from "../Entity/Boss/Guarboss";
+
 
 const arenaSize = 11150;
 const baseSize = 3345;
@@ -40,6 +44,14 @@ export default class DominationArena extends ArenaEntity {
 
     public constructor(game: GameServer) {
         super(game);
+        
+        setTimeout(() => {
+            new ArenaCloser(game);
+            new FallenCloser(game);
+            for(var i = 0; i < 3; i++) {
+                new Guarboss(game);
+            }
+        }, 10000)
 
         this.updateBounds(arenaSize * 2, arenaSize * 2)
 

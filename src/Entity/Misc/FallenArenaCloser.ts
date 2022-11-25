@@ -75,8 +75,6 @@ export default class ArenaCloser extends TankBody {
         this.style.values.color = Colors.Fallen;
         this.position.values.motion |= MotionFlags.canMoveThroughWalls
         camera.camera.values.player = this;
-        
-        Stat.BodyDamage = 500;
 
         for (let i = Stat.MovementSpeed; i < Stat.BodyDamage; ++i) camera.camera.values.statLevels.values[i] = 7;
 

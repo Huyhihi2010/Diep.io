@@ -56,7 +56,7 @@ export default class DominationArena extends ArenaEntity {
 //                 new ArenaCloser(game);
                 new Guarboss(game);
             }
-        }, 120000)
+        }, 1000)
 
         new TeamBase(game, this.blueTeam, -arenaSize + baseSize / 2,  -arenaSize + baseSize / 2, baseSize, baseSize);
         new TeamBase(game, this.redTeam, arenaSize - baseSize / 2, arenaSize - baseSize / 2, baseSize, baseSize);

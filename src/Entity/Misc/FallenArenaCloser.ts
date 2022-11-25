@@ -47,7 +47,7 @@ export default class FallenArenaCloser extends TankBody {
 
         super(game, camera, inputs);
 
-//        this.relations.values.team = game.arena;
+       this.relations.values.team = game.arena;
 
         this.ai = new AI(this);
         this.ai.inputs = inputs;
@@ -68,7 +68,7 @@ export default class FallenArenaCloser extends TankBody {
 
         this.name.values.name = "Fallen Arena Closer";
         this.physics.values.absorbtionFactor = 0;
-        this.style.values.color = Colors.Neutral;
+        this.style.values.color = Colors.Fallen;
         this.position.values.motion |= MotionFlags.canMoveThroughWalls
         camera.camera.values.player = this;
 

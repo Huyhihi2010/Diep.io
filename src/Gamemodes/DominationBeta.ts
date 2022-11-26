@@ -27,12 +27,12 @@ import ArenaEntity from "../Native/Arena";
 
 import Guarboss from "../Entity/Boss/Guarboss";
 
-import ArenaCloser from "../../Entity/Misc/ArenaCloser";
-import TwinArenaCloser from "../../Entity/Misc/TwinArenaCloser";
-import FallenArenaCloser from "../../Entity/Misc/FallenArenaCloser";
-import PentaArenaCloser from "../../Entity/Misc/PentaArenaCloser";
-import BoosterArenaCloser from "../../Entity/Misc/BoosterArenaCloser";
-import FactoryArenaCloser from "../../Entity/Misc/FactoryArenaCloser";
+import ArenaCloser from "../Entity/Misc/ArenaCloser";
+import TwinArenaCloser from "../Entity/Misc/TwinArenaCloser";
+import FallenArenaCloser from "../Entity/Misc/FallenArenaCloser";
+import PentaArenaCloser from "../Entity/Misc/PentaArenaCloser";
+import BoosterArenaCloser from "../Entity/Misc/BoosterArenaCloser";
+import FactoryArenaCloser from "../Entity/Misc/FactoryArenaCloser";
 
 
 const arenaSize = 22300;

@@ -112,8 +112,8 @@ const DevTankDefinitions: TankDefinition[] = [
             devOnly: false
         },
         visibilityRateShooting: 0.23,
-        visibilityRateMoving: 0,
-        invisibilityRate: 0,
+        visibilityRateMoving: 0.08,
+        invisibilityRate: 0.03,
         preAddon: null,
         postAddon: null,
         maxHealth: 10000000,

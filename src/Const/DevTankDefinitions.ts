@@ -1467,7 +1467,7 @@ const DevTankDefinitions: TankDefinition[] = [
         flags: {
             invisibility: false,
             zoomAbility: false,
-            devOnly: true
+            devOnly: false
         },
         visibilityRateShooting: 0.0,
         visibilityRateMoving: 0.0,

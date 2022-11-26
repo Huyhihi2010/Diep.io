@@ -54,7 +54,6 @@ import { TeamEntity } from "./Entity/Misc/TeamEntity";
 
 
 class WSSWriterStream extends Writer {
-    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
     
     private game: GameServer;
 
@@ -105,6 +104,8 @@ const HOSTED_ENDPOINTS: string[] = [];
      * Stores total player count.
      */
     public static globalPlayerCount = 0;
+        
+    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
 
     /** Whether or not the game server is running. */
     public running = true;

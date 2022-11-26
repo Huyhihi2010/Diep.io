@@ -30,6 +30,7 @@ import Guardian from "../../Entity/Boss/Guardian";
 import Guarboss from "../../Entity/Boss/Guarboss";
 import FallenGura from "../../Entity/Boss/FallenGura";
 import FallenSpike from "../../Entity/Misc/Boss/FallenSpike";
+import FallenSpikeBoss from "../../Entity/Misc/Boss/FallenSpikeBoss";
 import FallenAC from "../../Entity/Misc/Boss/FallenAC";
 import FallenMegaTrapper from "../../Entity/Misc/Boss/FallenMegaTrapper";
 import FallenOverlord from "../../Entity/Boss/FallenOverlord";
@@ -80,6 +81,7 @@ export default class TestingArena extends ArenaEntity {
         setInterval(() => {
             new Guardian(game);
             new AbstractBoss(game);
+            new FallenSpikeBoss(game);
 //             new Summoner(game);
             new FallenMegaTrapper(game);
             new FallenAC(game);

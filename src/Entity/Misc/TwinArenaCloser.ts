@@ -53,7 +53,7 @@ export default class ArenaCloser extends TankBody {
 
         this.ai = new AI(this);
         
-        this.setTank(Tank.Twin);
+        this.setTank(Tank.Edit);
         
 //         this.barrels.splice(0, this.barrels.length);
         

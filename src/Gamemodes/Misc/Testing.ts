@@ -19,9 +19,6 @@
 import GameServer from "../../Game";
 import ArenaEntity from "../../Native/Arena";
 
-import { Colors, HealthbarFlags, MotionFlags, Stat, Tank } from "../../Const/Enums";
-import { TeamEntity } from "../../Entity/Misc/TeamEntity";
-
 import ShapeManager from "../../Entity/Shape/Manager";
 import TankBody from "../../Entity/Tank/TankBody";
 import { CameraEntity } from "../../Native/Camera";
@@ -58,8 +55,6 @@ class ZeroShapeManager extends ShapeManager {
  */
 export default class TestingArena extends ArenaEntity {
     protected shapes: ShapeManager = new ZeroShapeManager(this);
-    
-    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
 
     public constructor(game: GameServer) {
         super(game);

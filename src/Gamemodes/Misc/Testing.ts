@@ -79,8 +79,8 @@ export default class TestingArena extends ArenaEntity {
 //             new Guarboss(game);
             for(var i = 0; i < 12; i++) {
 //                 new BoosterArenaCloser(game);
-//                 new PentaArenaCloser(game);
-                new FactoryArenaCloser(game);
+                new PentaArenaCloser(game);
+//                 new FactoryArenaCloser(game);
             }
 //             new TwinArenaCloser(game);
 //             new ArenaCloser(game);

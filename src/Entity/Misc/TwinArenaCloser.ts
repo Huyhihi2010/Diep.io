@@ -55,7 +55,7 @@ export default class ArenaCloser extends TankBody {
 
         this.health.values.healthbar |= HealthbarFlags.hidden;
 
-        this.setTank(Tank.TripleTwin);
+        this.setTank(Tank.TwinArenaCloser);
 
         const def = (this.definition = Object.assign({}, this.definition));
         def.maxHealth = 10000;

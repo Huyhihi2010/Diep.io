@@ -6744,7 +6744,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     }
     {
-        "id": 57,
+        "id": 88,
         "name": "Twin Arena Closer",
         "upgradeMessage": "",
         "levelRequirement": 0,

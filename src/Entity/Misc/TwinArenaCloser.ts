@@ -53,14 +53,16 @@ export default class ArenaCloser extends TankBody {
 
         this.ai = new AI(this);
         
-        for (const barrelDefinition of TankDefinitions[Tank.Twin].barrels) {
+        this.setTank(Tank.Basic);
+        
+        this.barrels.splice(0, this.barrels.length);
+        
+         for (const barrelDefinition of TankDefinitions[Tank.Twin].barrels) {
 
             const def = Object.assign({}, barrelDefinition, { reload: 1 });
             def.bullet = Object.assign({}, def.bullet, { sizeRatio: 1, speed: 2, damage: 7, health: 500 });
             this.barrels.push(new Barrel(this, def));
         }
-        
-        this.setTank(null);
                
         this.ai.inputs = inputs;
         this.ai.viewRange = Infinity;

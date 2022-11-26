@@ -103,9 +103,7 @@ const HOSTED_ENDPOINTS: string[] = [];
     /**
      * Stores total player count.
      */
-    public static globalPlayerCount = 0;
-        
-    public fallenTeam: TeamEntity = new TeamEntity(game, Colors.Fallen);
+    public static globalPlayerCount = 0; 
 
     /** Whether or not the game server is running. */
     public running = true;
@@ -304,4 +302,5 @@ const HOSTED_ENDPOINTS: string[] = [];
 
         for (const client of this.clients) client.tick(this.tick);
     }
+    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
 }

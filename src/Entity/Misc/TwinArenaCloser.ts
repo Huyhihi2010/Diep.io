@@ -83,15 +83,15 @@ export default class ArenaCloser extends TankBody {
             this.barrels.push(new Barrel(this, def));
         }
         
-        for(var i = 0; i < this.barrels.length; i++) {
-            this.barrels[i].sizeRatio = 1;
-            this.barrels[i].health = 500;
-            this.barrels[i].damage = 7;
-            this.barrels[i].speed = 2;
-            this.barrels[i].scatterRate = 1;
-            this.barrels[i].lifeLength = 1;
-            this.barrels[i].absorbtionFactor = 1;
-        }
+//         for(var i = 0; i < this.barrels.length; i++) {
+//             this.barrels[i].sizeRatio = 1;
+//             this.barrels[i].health = 500;
+//             this.barrels[i].damage = 7;
+//             this.barrels[i].speed = 2;
+//             this.barrels[i].scatterRate = 1;
+//             this.barrels[i].lifeLength = 1;
+//             this.barrels[i].absorbtionFactor = 1;
+//         }
     }
 
     public tick(tick: number) {

@@ -52,8 +52,8 @@ const DevTankDefinitions: TankDefinition[] = [
         upgrades: [],
         barrels: [
 	    {
-	        angle: Math.PI,
-                offset: 25,
+	        angle: Math.PI * 0.5,
+                offset: 0,
                 // Scale cuz direct
                 size: 120 / (1.01 ** (75 - 1)),
                 width: 91.4 / (1.01 ** (75 - 1)),
@@ -63,8 +63,8 @@ const DevTankDefinitions: TankDefinition[] = [
                 isTrapezoid: true,
                 trapezoidDirection: 0,
                 addon: null,
-                droneCount: 50,
-                canControlDrones: false,
+                droneCount: 8,
+                canControlDrones: true,
                 bullet: {
                     type: "drone",
                     sizeRatio: 0.7,
@@ -72,13 +72,13 @@ const DevTankDefinitions: TankDefinition[] = [
                     damage: 15,
                     speed: 3,
                     scatterRate: 1,
-                    lifeLength: 1,
+                    lifeLength: Infinity,
                     absorbtionFactor: 1
                 }
 	    },
 	    {
-	        angle: Math.PI,
-                offset: -25,
+	        angle: -Math.PI * 0.5,
+                offset: 0,
                 // Scale cuz direct
                 size: 120 / (1.01 ** (75 - 1)),
                 width: 91.4 / (1.01 ** (75 - 1)),
@@ -88,7 +88,7 @@ const DevTankDefinitions: TankDefinition[] = [
                 isTrapezoid: true,
                 trapezoidDirection: 0,
                 addon: null,
-                droneCount: 50,
+                droneCount: 8,
                 canControlDrones: false,
                 bullet: {
                     type: "drone",
@@ -97,7 +97,7 @@ const DevTankDefinitions: TankDefinition[] = [
                     damage: 15,
                     speed: 3,
                     scatterRate: 1,
-                    lifeLength: 1,
+                    lifeLength: Infinity,
                     absorbtionFactor: 1
                 }
 	    }
@@ -118,7 +118,7 @@ const DevTankDefinitions: TankDefinition[] = [
         postAddon: null,
         maxHealth: 50,
         borderWidth: 15,
-        sides: 3,
+        sides: 1,
         stats: [
             {
                 name: "Movement Speed",

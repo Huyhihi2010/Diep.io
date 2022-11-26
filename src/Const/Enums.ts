@@ -123,8 +123,7 @@ export enum Tank {
     Spike         = 51,
     Factory       = 52,
     Skimmer       = 54,
-    Rocketeer     = 55,
-    TwinArenaCloser = 88
+    Rocketeer     = 55
 }
 
 /**

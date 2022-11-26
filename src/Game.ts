@@ -105,7 +105,7 @@ const HOSTED_ENDPOINTS: string[] = [];
      */
     public static globalPlayerCount = 0;
         
-    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
+    public fallenTeam: TeamEntity = new TeamEntity(game, Colors.Fallen);
 
     /** Whether or not the game server is running. */
     public running = true;

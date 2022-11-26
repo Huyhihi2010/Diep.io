@@ -6526,7 +6526,7 @@ const TankDefinitions = JSON.parse(`[
     },
     {
         "id": 53,
-        "name": "",
+        "name": "nullTank",
         "upgradeMessage": "",
         "levelRequirement": 0,
         "upgrades": [],

@@ -60,7 +60,7 @@ export default class ArenaCloser extends TankBody {
             this.barrels.push(new Barrel(this, def));
         }
         
-        this.setTank(Tank);
+        this.setTank(null);
                
         this.ai.inputs = inputs;
         this.ai.viewRange = Infinity;

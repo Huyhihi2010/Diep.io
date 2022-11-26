@@ -27,7 +27,12 @@ import ArenaEntity from "../Native/Arena";
 
 import Guarboss from "../Entity/Boss/Guarboss";
 
-import ArenaCloser from "../Entity/Misc/ArenaCloser";
+import ArenaCloser from "../../Entity/Misc/ArenaCloser";
+import TwinArenaCloser from "../../Entity/Misc/TwinArenaCloser";
+import FallenArenaCloser from "../../Entity/Misc/FallenArenaCloser";
+import PentaArenaCloser from "../../Entity/Misc/PentaArenaCloser";
+import BoosterArenaCloser from "../../Entity/Misc/BoosterArenaCloser";
+import FactoryArenaCloser from "../../Entity/Misc/FactoryArenaCloser";
 
 
 const arenaSize = 22300;
@@ -53,8 +58,8 @@ export default class DominationArena extends ArenaEntity {
         
         setTimeout(() => {
             for(var i = 0; i < 1; i++) {
-//                 new ArenaCloser(game);
-                new Guarboss(game);
+                new PentaArenaCloser(game);
+//                 new Guarboss(game);
             }
         }, 1000)
 

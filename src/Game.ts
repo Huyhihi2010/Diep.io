@@ -31,7 +31,7 @@ import SandboxArena from "./Gamemodes/Sandbox";
 
 import AssaultArena from "./Gamemodes/assault";
 
-import { ClientBound } from "./Const/Enums";
+import {Colors ,ClientBound } from "./Const/Enums";
 import { IncomingMessage } from "http";
 import WebSocket = require("ws");
 import Teams4Arena from "./Gamemodes/Team4";

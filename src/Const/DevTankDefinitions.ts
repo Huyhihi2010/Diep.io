@@ -45,116 +45,6 @@ export enum DevTank {
 */
 const DevTankDefinitions: TankDefinition[] = [
     {
-        id: DevTank.Edit,
-        name: "Base",
-        upgradeMessage: "now!, you have a drone base",
-        // upgrades dont have any affect
-        upgrades: [],
-        barrels: [
-	    {
-	        angle: Math.PI * 0.5,
-                offset: 0,
-                // Scale cuz direct
-                size: 140 / (1.01 ** (75 - 1)),
-                width: 111.4 / (1.01 ** (75 - 1)),
-                delay: 0,
-                reload: 0.1,
-                recoil: 0,
-                isTrapezoid: false,
-                trapezoidDirection: 0,
-                addon: null,
-                droneCount: 16,
-                canControlDrones: false,
-                bullet: {
-                    type: "drone",
-                    sizeRatio: 0.7,
-                    health: Infinity,
-                    damage: 2,
-                    speed: 3,
-                    scatterRate: 1,
-                    lifeLength: Infinity,
-                    absorbtionFactor: 1
-                }
-	    },
-	    {
-	        angle: -Math.PI * 0.5,
-                offset: 0,
-                // Scale cuz direct
-                size: 140 / (1.01 ** (75 - 1)),
-                width: 111.4 / (1.01 ** (75 - 1)),
-                delay: 0,
-                reload: 0.1,
-                recoil: 0,
-                isTrapezoid: false,
-                trapezoidDirection: 0,
-                addon: null,
-                droneCount: 16,
-                canControlDrones: true,
-                bullet: {
-                    type: "drone",
-                    sizeRatio: 0.7,
-                    health: Infinity,
-                    damage: 2,
-                    speed: 3,
-                    scatterRate: 1,
-                    lifeLength: Infinity,
-                    absorbtionFactor: 1
-                }
-	    }
-	],
-        levelRequirement: 450,
-        fieldFactor: .75,
-        speed: 1.5,
-        absorbtionFactor: 1,
-        flags: {
-            invisibility: false,
-            zoomAbility: false,
-            devOnly: false
-        },
-        visibilityRateShooting: 0.23,
-        visibilityRateMoving: 0.08,
-        invisibilityRate: 0.03,
-        preAddon: null,
-        postAddon: null,
-        maxHealth: 10000000,
-        borderWidth: 15,
-        sides: 1,
-        stats: [
-            {
-                name: "Movement Speed",
-                max: 10
-            },
-            {
-                name: "Reload",
-                max: 10
-            },
-            {
-                name: "Bullet Damage",
-                max: 10
-            },
-            {
-                name: "Bullet Penetration",
-                max: 10
-            },
-            {
-                name: "Bullet Speed",
-                max: 10
-            },
-            {
-                name: "Body Damage",
-                max: 10
-            },
-            {
-                name: "Max Health",
-                max: 10
-            },
-            {
-                name: "Health Regen",
-                max: 10
-            }
-        ]
-    },
-    {
         id: DevTank.Developer,
         name: "Developer",
         upgradeMessage: "Use your right mouse button to teleport to where your mouse is",
@@ -2077,6 +1967,116 @@ const DevTankDefinitions: TankDefinition[] = [
             {
                 name: "Health Regen",
                 "max": 7
+            }
+        ]
+    },
+	{
+        id: DevTank.Edit,
+        name: "Base",
+        upgradeMessage: "now!, you have a drone base",
+        // upgrades dont have any affect
+        upgrades: [],
+        barrels: [
+	    {
+	        angle: Math.PI * 0.5,
+                offset: 0,
+                // Scale cuz direct
+                size: 140 / (1.01 ** (75 - 1)),
+                width: 111.4 / (1.01 ** (75 - 1)),
+                delay: 0,
+                reload: 0.1,
+                recoil: 0,
+                isTrapezoid: false,
+                trapezoidDirection: 0,
+                addon: null,
+                droneCount: 16,
+                canControlDrones: false,
+                bullet: {
+                    type: "drone",
+                    sizeRatio: 0.7,
+                    health: Infinity,
+                    damage: 2,
+                    speed: 3,
+                    scatterRate: 1,
+                    lifeLength: Infinity,
+                    absorbtionFactor: 1
+                }
+	    },
+	    {
+	        angle: -Math.PI * 0.5,
+                offset: 0,
+                // Scale cuz direct
+                size: 140 / (1.01 ** (75 - 1)),
+                width: 111.4 / (1.01 ** (75 - 1)),
+                delay: 0,
+                reload: 0.1,
+                recoil: 0,
+                isTrapezoid: false,
+                trapezoidDirection: 0,
+                addon: null,
+                droneCount: 16,
+                canControlDrones: true,
+                bullet: {
+                    type: "drone",
+                    sizeRatio: 0.7,
+                    health: Infinity,
+                    damage: 2,
+                    speed: 3,
+                    scatterRate: 1,
+                    lifeLength: Infinity,
+                    absorbtionFactor: 1
+                }
+	    }
+	],
+        levelRequirement: 450,
+        fieldFactor: .75,
+        speed: 1.5,
+        absorbtionFactor: 1,
+        flags: {
+            invisibility: false,
+            zoomAbility: false,
+            devOnly: false
+        },
+        visibilityRateShooting: 0.23,
+        visibilityRateMoving: 0.08,
+        invisibilityRate: 0.03,
+        preAddon: null,
+        postAddon: null,
+        maxHealth: 10000000,
+        borderWidth: 15,
+        sides: 1,
+        stats: [
+            {
+                name: "Movement Speed",
+                max: 10
+            },
+            {
+                name: "Reload",
+                max: 10
+            },
+            {
+                name: "Bullet Damage",
+                max: 10
+            },
+            {
+                name: "Bullet Penetration",
+                max: 10
+            },
+            {
+                name: "Bullet Speed",
+                max: 10
+            },
+            {
+                name: "Body Damage",
+                max: 10
+            },
+            {
+                name: "Max Health",
+                max: 10
+            },
+            {
+                name: "Health Regen",
+                max: 10
             }
         ]
     }

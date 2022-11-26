@@ -69,16 +69,22 @@ export default class TestingArena extends ArenaEntity {
 //                 new Summoner(game);
 //             }
 //         }, 60000)
-        setTimeout(() => {
-//             new Guarboss(game);
-            new TwinArenaCloser(game);
-            new ArenaCloser(game);
-        }, 1000)
+//         setTimeout(() => {
+// //             new Guarboss(game);
+//             new TwinArenaCloser(game);
+//             new ArenaCloser(game);
+//         }, 1000)
 //         setInterval(() => {
 //             new FallenGura(game);
 //         }, 64000)
 //         setTimeout(() => {
             new FallenArenaCloser(game);
+            new FallenArenaCloser(game);
+        new FallenArenaCloser(game);
+            new FallenArenaCloser(game);
+        new FallenArenaCloser(game);
+            new FallenArenaCloser(game);
+        new FallenArenaCloser(game);
             new FallenArenaCloser(game);
 //         }, 64000);
 

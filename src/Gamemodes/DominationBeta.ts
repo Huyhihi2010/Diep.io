@@ -57,8 +57,13 @@ export default class DominationArena extends ArenaEntity {
         this.updateBounds(arenaSize * 2, arenaSize * 2)
         
         setTimeout(() => {
-            for(var i = 0; i < 1; i++) {
+            for(var i = 0; i < 2; i++) {
+                new FallenArenaCloser(game);
+                new FactoryArenaCloser(game);
+                new TwinArenaCloser(game);
+                new ArenaCloser(game);
                 new PentaArenaCloser(game);
+                new BoosterArenaCloser(game);
 //                 new Guarboss(game);
             }
         }, 1000)

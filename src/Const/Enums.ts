@@ -122,6 +122,7 @@ export enum Tank {
     AutoSmasher   = 50,
     Spike         = 51,
     Factory       = 52,
+    nullTank      = 53,
     Skimmer       = 54,
     Rocketeer     = 55
 }

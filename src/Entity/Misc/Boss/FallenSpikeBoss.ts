@@ -34,7 +34,7 @@ export default class FallenSpike extends AbstractBoss {
         this.name.values.name = 'Fallen Boss Spike';
 
         // Sharp
-        this.damagePerTick *= 1;
+        this.damagePerTick *= 3;
 
         if (AddonById.spike) new AddonById['spike'](this);
         this.health.values.health = this.health.values.maxHealth = 120000;

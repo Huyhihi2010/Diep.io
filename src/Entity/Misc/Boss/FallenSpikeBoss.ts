@@ -29,17 +29,17 @@ export default class FallenSpike extends AbstractBoss {
     public constructor(game: GameServer) {
         super(game);
 
-        this.movementSpeed = 9.0;
+        this.movementSpeed = 4.0;
 
         this.name.values.name = 'Fallen Boss Spike';
 
         // Sharp
-        this.damagePerTick *= 12;
+        this.damagePerTick *= 5;
 
         if (AddonById.spike) new AddonById['spike'](this);
-        this.health.values.health = this.health.values.maxHealth = 15000;
-        this.physics.values.size = 110;
-        this.sizeFactor = 110;
+        this.health.values.health = this.health.values.maxHealth = 6000;
+        this.physics.values.size = 170;
+        this.sizeFactor = 170;
 
     }
 

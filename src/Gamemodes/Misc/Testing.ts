@@ -84,19 +84,19 @@ export default class TestingArena extends ArenaEntity {
 //                 new BoosterArenaCloser(game);
 //                 new PentaArenaCloser(game);
 //                 new FactoryArenaCloser(game);
-                new TwinArenaCloser(game);
+//                 new TwinArenaCloser(game);
 //                 new ArenaCloser(game);
             }
         }, 1000)
         setInterval(() => {
-//             new FallenGura(game);
+            new FallenGura(game);
         }, 64000)
 //         setTimeout(() => {
 //             new FallenArenaCloser(game);
 //         }, 64000);
 
         setInterval(() => {
-//             new Guardian(game);
+            new Guardian(game);
             new AbstractBoss(game);
             new FallenSpikeBoss(game);
 //             new Summoner(game);

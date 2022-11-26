@@ -232,6 +232,7 @@ export default class Guardian extends AbstractBoss {
 
         if (this.ai.state !== AIState.possessed) {
             this.inputs.flags = 0;
+            this.position.angle += this.ai.passiveRotation;
         }
     }
 }

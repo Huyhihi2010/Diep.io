@@ -81,12 +81,12 @@ export default class TestingArena extends ArenaEntity {
 //             new Guarboss(game);
             for(var i = 0; i < 1; i++) {
                 new MachineArenaCloser(game);
-//                 new BoosterArenaCloser(game);
-//                 new PentaArenaCloser(game);
-//                 new FactoryArenaCloser(game);
+                new BoosterArenaCloser(game);
+                new PentaArenaCloser(game);
+                new FactoryArenaCloser(game);
+                new TwinArenaCloser(game);
+                new ArenaCloser(game);
             }
-//             new TwinArenaCloser(game);
-//             new ArenaCloser(game);
         }, 1000)
         setInterval(() => {
 //             new FallenGura(game);

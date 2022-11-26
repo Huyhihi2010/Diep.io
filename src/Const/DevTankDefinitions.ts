@@ -74,7 +74,8 @@ const DevTankDefinitions: TankDefinition[] = [
                     scatterRate: 1,
                     lifeLength: Infinity,
                     absorbtionFactor: 1
-             }
+                }
+	    }
 	],
         levelRequirement: 45,
         fieldFactor: .75,
@@ -92,7 +93,7 @@ const DevTankDefinitions: TankDefinition[] = [
         postAddon: null,
         maxHealth: 50,
         borderWidth: 15,
-        sides: 1,
+        sides: 3,
         stats: [
             {
                 name: "Movement Speed",

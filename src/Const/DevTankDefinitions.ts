@@ -53,7 +53,7 @@ const DevTankDefinitions: TankDefinition[] = [
         barrels: [
 	    {
 	        angle: Math.PI,
-                offset: 0,
+                offset: 25,
                 // Scale cuz direct
                 size: 120 / (1.01 ** (75 - 1)),
                 width: 91.4 / (1.01 ** (75 - 1)),
@@ -63,16 +63,41 @@ const DevTankDefinitions: TankDefinition[] = [
                 isTrapezoid: true,
                 trapezoidDirection: 0,
                 addon: null,
-                droneCount: 10,
+                droneCount: 50,
                 canControlDrones: false,
                 bullet: {
                     type: "drone",
                     sizeRatio: 0.7,
                     health: 10000,
-                    damage: 30,
+                    damage: 15,
                     speed: 3,
                     scatterRate: 1,
-                    lifeLength: Infinity,
+                    lifeLength: 1,
+                    absorbtionFactor: 1
+                }
+	    },
+	    {
+	        angle: Math.PI,
+                offset: -25,
+                // Scale cuz direct
+                size: 120 / (1.01 ** (75 - 1)),
+                width: 91.4 / (1.01 ** (75 - 1)),
+                delay: 0,
+                reload: 0.2,
+                recoil: 0,
+                isTrapezoid: true,
+                trapezoidDirection: 0,
+                addon: null,
+                droneCount: 50,
+                canControlDrones: false,
+                bullet: {
+                    type: "drone",
+                    sizeRatio: 0.7,
+                    health: 10000,
+                    damage: 15,
+                    speed: 3,
+                    scatterRate: 1,
+                    lifeLength: 1,
                     absorbtionFactor: 1
                 }
 	    }

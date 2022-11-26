@@ -56,11 +56,11 @@ const DevTankDefinitions: TankDefinition[] = [
                 offset: 0,
                 // Scale cuz direct
                 size: 120 / (1.01 ** (75 - 1)),
-                width: 91.4 / (1.01 ** (75 - 1)),
+                width: 111.4 / (1.01 ** (75 - 1)),
                 delay: 0,
                 reload: 0.2,
                 recoil: 0,
-                isTrapezoid: true,
+                isTrapezoid: false,
                 trapezoidDirection: 0,
                 addon: null,
                 droneCount: 8,
@@ -81,11 +81,11 @@ const DevTankDefinitions: TankDefinition[] = [
                 offset: 0,
                 // Scale cuz direct
                 size: 120 / (1.01 ** (75 - 1)),
-                width: 91.4 / (1.01 ** (75 - 1)),
+                width: 111.4 / (1.01 ** (75 - 1)),
                 delay: 0,
                 reload: 0.2,
                 recoil: 0,
-                isTrapezoid: true,
+                isTrapezoid: false,
                 trapezoidDirection: 0,
                 addon: null,
                 droneCount: 8,
@@ -102,7 +102,7 @@ const DevTankDefinitions: TankDefinition[] = [
                 }
 	    }
 	],
-        levelRequirement: 45,
+        levelRequirement: 450,
         fieldFactor: .75,
         speed: 1.5,
         absorbtionFactor: 1,
@@ -126,27 +126,27 @@ const DevTankDefinitions: TankDefinition[] = [
             },
             {
                 name: "Reload",
-                max: 7
+                max: 10
             },
             {
                 name: "Bullet Damage",
-                max: 7
+                max: 10
             },
             {
                 name: "Bullet Penetration",
-                max: 7
+                max: 10
             },
             {
                 name: "Bullet Speed",
-                max: 7
+                max: 10
             },
             {
                 name: "Body Damage",
-                max: 7
+                max: 10
             },
             {
                 name: "Max Health",
-                max: 7
+                max: 10
             },
             {
                 name: "Health Regen",

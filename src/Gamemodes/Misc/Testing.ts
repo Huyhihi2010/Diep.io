@@ -44,6 +44,7 @@ import TwinArenaCloser from "../../Entity/Misc/TwinArenaCloser";
 import FallenArenaCloser from "../../Entity/Misc/FallenArenaCloser";
 import PentaArenaCloser from "../../Entity/Misc/PentaArenaCloser";
 import BoosterArenaCloser from "../../Entity/Misc/BoosterArenaCloser";
+import FactoryArenaCloser from "../../Entity/Misc/FactoryArenaCloser";
 /**
  * Only spawns crashers
  */
@@ -78,7 +79,8 @@ export default class TestingArena extends ArenaEntity {
 //             new Guarboss(game);
             for(var i = 0; i < 12; i++) {
 //                 new BoosterArenaCloser(game);
-                new PentaArenaCloser(game);
+//                 new PentaArenaCloser(game);
+                new FactoryArenaCloser(game);
             }
 //             new TwinArenaCloser(game);
 //             new ArenaCloser(game);

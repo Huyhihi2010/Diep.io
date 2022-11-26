@@ -46,6 +46,8 @@ import JungleArena from "./Gamemodes/Misc/Jungle";
 import FactoryTestArena from "./Gamemodes/Misc/FactoryTest";
 import BallArena from "./Gamemodes/Misc/Ball";
 
+import { TeamEntity } from "./Entity/Misc/TeamEntity";
+
 /**
  * WriterStream that broadcasts to all of the game's WebSockets.
  */

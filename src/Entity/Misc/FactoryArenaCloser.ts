@@ -59,8 +59,8 @@ export default class ArenaCloser extends TankBody {
         
          for (const barrelDefinition of TankDefinitions[Tank.Factory].barrels) {
 
-            const def = Object.assign({}, barrelDefinition, {droneCount: 6, reload: 1});
-            def.bullet = Object.assign({}, def.bullet, { sizeRatio: 1, speed: 3, damage: 7, health: 500 });
+            const def = Object.assign({}, barrelDefinition, {droneCount: 6, reload: 3});
+            def.bullet = Object.assign({}, def.bullet, { sizeRatio: 1, speed: 2, damage: 7, health: 500 });
             this.barrels.push(new Barrel(this, def));
         }
                

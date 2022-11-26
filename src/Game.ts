@@ -302,5 +302,4 @@ const HOSTED_ENDPOINTS: string[] = [];
 
         for (const client of this.clients) client.tick(this.tick);
     }
-    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
 }

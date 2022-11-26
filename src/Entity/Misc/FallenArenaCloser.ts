@@ -49,7 +49,7 @@ export default class ArenaCloser extends TankBody {
 
         super(game, camera, inputs);
 
-        this.relations.values.team = this.game.fallenTeam;
+        this.relations.values.team = this.fallenTeam;
 
         this.ai = new AI(this);
         this.ai.inputs = inputs;

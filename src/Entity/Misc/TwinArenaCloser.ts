@@ -74,7 +74,7 @@ export default class ArenaCloser extends TankBody {
 
         for (let i = Stat.MovementSpeed; i < Stat.BodyDamage; ++i) camera.camera.values.statLevels.values[i] = 7;
 
-        this.ai.aimSpeed = (this.barrels[0].bulletAccel * 1.6 + this.barrels[1].bulletAccel * 1.6) / 2;
+        this.ai.aimSpeed = 25;
     }
 
     public tick(tick: number) {

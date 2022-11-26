@@ -52,6 +52,16 @@ export default class ArenaCloser extends TankBody {
         this.relations.values.team = game.arena;
 
         this.ai = new AI(this);
+        
+        for (const barrelDefinition of TankDefinitions[Tank.Twin].barrels) {
+
+            const def = Object.assign({}, barrelDefinition, { reload: 1 });
+            def.bullet = Object.assign({}, def.bullet, { sizeRatio: 1, speed: 2, damage: 7, health: 500 });
+            this.barrels.push(new Barrel(this, def));
+        }
+        
+        this.setTank(Tank);
+               
         this.ai.inputs = inputs;
         this.ai.viewRange = Infinity;
 
@@ -76,12 +86,6 @@ export default class ArenaCloser extends TankBody {
 
         for (let i = Stat.MovementSpeed; i < Stat.BodyDamage; ++i) camera.camera.values.statLevels.values[i] = 7;
         
-        for (const barrelDefinition of TankDefinitions[Tank.Twin].barrels) {
-
-            const def = Object.assign({}, barrelDefinition, { reload: 1 });
-            def.bullet = Object.assign({}, def.bullet, { sizeRatio: 1, speed: 2, damage: 7, health: 500 });
-            this.barrels.push(new Barrel(this, def));
-        }
         
         this.ai.aimSpeed = 25 + (this.barrels[0].bulletAccel * 1.6 + this.barrels[1].bulletAccel * 1.6) / 2;
         

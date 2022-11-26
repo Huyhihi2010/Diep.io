@@ -55,7 +55,7 @@ export default class ArenaCloser extends TankBody {
 
         this.health.values.healthbar |= HealthbarFlags.hidden;
 
-        this.setTank(Tank.TwinArenaCloser);
+        this.setTank(Tank.Twin);
 
         const def = (this.definition = Object.assign({}, this.definition));
         def.maxHealth = 10000;
@@ -75,15 +75,15 @@ export default class ArenaCloser extends TankBody {
         for (let i = Stat.MovementSpeed; i < Stat.BodyDamage; ++i) camera.camera.values.statLevels.values[i] = 7;
 
         this.ai.aimSpeed = this.barrels[0].bulletAccel * 1.6;
-//         for(var i = 0; i < this.barrels.length; i++) {
-//             this.barrels[i].sizeRatio = 1;
-//             this.barrels[i].health = 500;
-//             this.barrels[i].damage = 7;
-//             this.barrels[i].speed = 2;
-//             this.barrels[i].scatterRate = 1;
-//             this.barrels[i].lifeLength = 1;
-//             this.barrels[i].absorbtionFactor = 1;
-//         }
+        for(var i = 0; i < this.barrels.length; i++) {
+            this.barrels[i].sizeRatio = 1;
+            this.barrels[i].health = 500;
+            this.barrels[i].damage = 7;
+            this.barrels[i].speed = 2;
+            this.barrels[i].scatterRate = 1;
+            this.barrels[i].lifeLength = 1;
+            this.barrels[i].absorbtionFactor = 1;
+        }
     }
 
     public tick(tick: number) {

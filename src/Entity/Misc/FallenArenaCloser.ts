@@ -29,6 +29,8 @@ import { AI, AIState, Inputs } from "../AI";
  */
 export default class ArenaCloser extends TankBody {
     
+    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
+    
     /** Size of a level 0 Arena Closer. */
     public static BASE_SIZE = 225;
     
@@ -49,7 +51,7 @@ export default class ArenaCloser extends TankBody {
 
         super(game, camera, inputs);
 
-        this.relations.values.team = fallenTeam;
+        this.relations.values.team = this.fallenTeam;
 
         this.ai = new AI(this);
         this.ai.inputs = inputs;

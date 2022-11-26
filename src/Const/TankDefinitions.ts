@@ -6742,7 +6742,7 @@ const TankDefinitions = JSON.parse(`[
                 "max": 7
             }
         ]
-    }
+    },
     {
         "id": 88,
         "name": "Twin Arena Closer",
@@ -6845,7 +6845,7 @@ const TankDefinitions = JSON.parse(`[
                 "max": 7
             }
         ]
-    },
+    }
 ]`) as (TankDefinition | null)[] & Record<Tank, TankDefinition>;
 
 export default TankDefinitions;

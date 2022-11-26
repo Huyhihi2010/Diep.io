@@ -53,9 +53,9 @@ export default class ArenaCloser extends TankBody {
 
         this.ai = new AI(this);
         
-        this.setTank(Tank.EditTank);
+        this.setTank(Tank.Twin);
         
-//         this.barrels.splice(0, this.barrels.length);
+        this.barrels.splice(0, this.barrels.length);
         
          for (const barrelDefinition of TankDefinitions[Tank.Twin].barrels) {
 

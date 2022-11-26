@@ -79,7 +79,7 @@ export default class TestingArena extends ArenaEntity {
         setTimeout(() => {
 //             new Guarboss(game);
 //             new Guarboss(game);
-            for(var i = 0; i < 12; i++) {
+            for(var i = 0; i < 1; i++) {
                 new MachineArenaCloser(game);
 //                 new BoosterArenaCloser(game);
 //                 new PentaArenaCloser(game);

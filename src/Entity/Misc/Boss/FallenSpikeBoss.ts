@@ -37,7 +37,7 @@ export default class FallenSpike extends AbstractBoss {
         this.damagePerTick *= 3;
 
         if (AddonById.spike) new AddonById['spike'](this);
-        this.health.values.health = this.health.values.maxHealth = 120000;
+        this.health.values.health = this.health.values.maxHealth = 6000;
         this.physics.values.size = 170;
         this.sizeFactor = 170;
 

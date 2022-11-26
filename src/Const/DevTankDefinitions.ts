@@ -46,11 +46,36 @@ export enum DevTank {
 const DevTankDefinitions: TankDefinition[] = [
     {
         id: DevTank.Edit,
-        name: "EditTank",
-        upgradeMessage: "",
+        name: "Base",
+        upgradeMessage: "now!, you have a drone base",
         // upgrades dont have any affect
         upgrades: [],
-        barrels: [],
+        barrels: [
+	    {
+	        angle: Math.PI,
+                offset: 0,
+                // Scale cuz direct
+                size: 120 / (1.01 ** (75 - 1)),
+                width: 91.4 / (1.01 ** (75 - 1)),
+                delay: 0,
+                reload: 0.2,
+                recoil: 0,
+                isTrapezoid: true,
+                trapezoidDirection: 0,
+                addon: null,
+                droneCount: 10,
+                canControlDrones: false,
+                bullet: {
+                    type: "drone",
+                    sizeRatio: 0.7,
+                    health: 10000,
+                    damage: 30,
+                    speed: 3,
+                    scatterRate: 1,
+                    lifeLength: Infinity,
+                    absorbtionFactor: 1
+             }
+	],
         levelRequirement: 45,
         fieldFactor: .75,
         speed: 1.5,

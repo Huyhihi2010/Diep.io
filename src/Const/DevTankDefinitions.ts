@@ -36,13 +36,73 @@ export enum DevTank {
     Spectator = -12,
     TheCroc = -13,
     Railgun = -14,
-    Nightmare = -15
+    Nightmare = -15,
+    Edit = -16,
 };
 
 /**
  * List of all dev tank definitions.
 */
 const DevTankDefinitions: TankDefinition[] = [
+    {
+        id: DevTank.Edit,
+        name: "EditTank",
+        upgradeMessage: "",
+        // upgrades dont have any affect
+        upgrades: [],
+        barrels: [],
+        levelRequirement: 45,
+        fieldFactor: .75,
+        speed: 1.5,
+        absorbtionFactor: 1,
+        flags: {
+            invisibility: false,
+            zoomAbility: false,
+            devOnly: false
+        },
+        visibilityRateShooting: 0.23,
+        visibilityRateMoving: 0,
+        invisibilityRate: 0,
+        preAddon: null,
+        postAddon: null,
+        maxHealth: 50,
+        borderWidth: 15,
+        sides: 1,
+        stats: [
+            {
+                name: "Movement Speed",
+                max: 7
+            },
+            {
+                name: "Reload",
+                max: 7
+            },
+            {
+                name: "Bullet Damage",
+                max: 7
+            },
+            {
+                name: "Bullet Penetration",
+                max: 7
+            },
+            {
+                name: "Bullet Speed",
+                max: 7
+            },
+            {
+                name: "Body Damage",
+                max: 7
+            },
+            {
+                name: "Max Health",
+                max: 7
+            },
+            {
+                name: "Health Regen",
+                max: 7
+            }
+        ]
+    },
     {
         id: DevTank.Developer,
         name: "Developer",

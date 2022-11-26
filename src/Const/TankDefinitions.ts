@@ -161,7 +161,7 @@ export interface TankDefinition {
  */
 const TankDefinitions = JSON.parse(`[
    {
-        "id": -200,
+        "id": 56,
         "name": "Edit",
         "upgradeMessage": "",
         "levelRequirement": 0,

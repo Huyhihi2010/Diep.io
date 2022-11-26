@@ -18,6 +18,8 @@
 
 import GameServer from "../../Game";
 import TankBody from "../Tank/TankBody";
+import Barrel from "../Tank/Barrel";
+import TankDefinitions from "../../Const/TankDefinitions";
 
 import { Colors, HealthbarFlags, MotionFlags, Stat, Tank } from "../../Const/Enums";
 import { CameraEntity } from "../../Native/Camera";

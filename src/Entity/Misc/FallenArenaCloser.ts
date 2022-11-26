@@ -29,7 +29,7 @@ import { AI, AIState, Inputs } from "../AI";
  */
 export default class ArenaCloser extends TankBody {
     
-    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
+//     public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
     
     /** Size of a level 0 Arena Closer. */
     public static BASE_SIZE = 225;
@@ -51,7 +51,7 @@ export default class ArenaCloser extends TankBody {
 
         super(game, camera, inputs);
 
-        this.relations.values.team = this.fallenTeam;
+        this.relations.values.team = this.game.arena;
 
         this.ai = new AI(this);
         this.ai.inputs = inputs;
@@ -65,7 +65,7 @@ export default class ArenaCloser extends TankBody {
         def.maxHealth = 100000;
         // TODO(ABC):
         // Fix all the stats
-        def.speed = 1;
+        def.speed = 2;
 
         this.damageReduction = 0;
         this.damagePerTick = 5000;
@@ -78,7 +78,7 @@ export default class ArenaCloser extends TankBody {
 
         for (let i = Stat.MovementSpeed; i < Stat.BodyDamage; ++i) camera.camera.values.statLevels.values[i] = 7;
 
-        this.ai.aimSpeed = this.barrels[0].bulletAccel * 1.6;
+        this.ai.aimSpeed = this.barrels[0].bulletAccel * 1.6 * 2;
     }
 
     public tick(tick: number) {

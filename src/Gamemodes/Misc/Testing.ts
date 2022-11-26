@@ -19,6 +19,9 @@
 import GameServer from "../../Game";
 import ArenaEntity from "../../Native/Arena";
 
+import { Colors, HealthbarFlags, MotionFlags, Stat, Tank } from "../../Const/Enums";
+import { TeamEntity } from "../../Entity/Misc/TeamEntity";
+
 import ShapeManager from "../../Entity/Shape/Manager";
 import TankBody from "../../Entity/Tank/TankBody";
 import { CameraEntity } from "../../Native/Camera";

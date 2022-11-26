@@ -68,7 +68,7 @@ const DevTankDefinitions: TankDefinition[] = [
                 bullet: {
                     type: "drone",
                     sizeRatio: 0.7,
-                    health: 10000,
+                    health: Infinity,
                     damage: 2,
                     speed: 3,
                     scatterRate: 1,
@@ -93,7 +93,7 @@ const DevTankDefinitions: TankDefinition[] = [
                 bullet: {
                     type: "drone",
                     sizeRatio: 0.7,
-                    health: 10000,
+                    health: Infinity,
                     damage: 2,
                     speed: 3,
                     scatterRate: 1,
@@ -116,7 +116,7 @@ const DevTankDefinitions: TankDefinition[] = [
         invisibilityRate: 0,
         preAddon: null,
         postAddon: null,
-        maxHealth: 100,
+        maxHealth: 10000000,
         borderWidth: 15,
         sides: 1,
         stats: [

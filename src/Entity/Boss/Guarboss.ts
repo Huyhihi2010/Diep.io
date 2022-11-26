@@ -52,7 +52,7 @@ export default class Guardian extends AbstractBoss {
                 size: 120 / (1.01 ** (75 - 1)),
                 width: 91.4 / (1.01 ** (75 - 1)),
                 delay: 0,
-                reload: 2,
+                reload: 1,
                 recoil: 0,
                 isTrapezoid: false,
                 trapezoidDirection: 0,

@@ -43,7 +43,8 @@ import ArenaCloser from "../../Entity/Misc/ArenaCloser";
 import TwinArenaCloser from "../../Entity/Misc/TwinArenaCloser";
 import FallenArenaCloser from "../../Entity/Misc/FallenArenaCloser";
 import PentaArenaCloser from "../../Entity/Misc/PentaArenaCloser";
-import BoosterArenaCloser from "../../Entity/Misc/BoosterArenaCloser"
+import BoosterArenaCloser from "../../Entity/Misc/BoosterArenaCloser";
+import FactoryArenaCloser from "../../Entity/Misc/FactoryArenaCloser";
 /**
  * Only spawns crashers
  */
@@ -76,6 +77,7 @@ export default class TestingArena extends ArenaEntity {
         setTimeout(() => {
 //             new Guarboss(game);
 //             new Guarboss(game);
+            new FactoryArenaCloser(game);
             new BoosterArenaCloser(game);
             new TwinArenaCloser(game);
             new PentaArenaCloser(game);

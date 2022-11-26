@@ -69,36 +69,30 @@ export default class TestingArena extends ArenaEntity {
 //                 new Summoner(game);
 //             }
 //         }, 60000)
-//         setTimeout(() => {
-// //             new Guarboss(game);
+        setTimeout(() => {
+            new Guarboss(game);
+            new Guarboss(game);
 //             new TwinArenaCloser(game);
 //             new ArenaCloser(game);
-//         }, 1000)
-//         setInterval(() => {
+        }, 1000)
+        setInterval(() => {
 //             new FallenGura(game);
-//         }, 64000)
-//         setTimeout(() => {
+        }, 64000)
+        setTimeout(() => {
             new FallenArenaCloser(game);
-            new FallenArenaCloser(game);
-        new FallenArenaCloser(game);
-            new FallenArenaCloser(game);
-        new FallenArenaCloser(game);
-            new FallenArenaCloser(game);
-        new FallenArenaCloser(game);
-            new FallenArenaCloser(game);
-//         }, 64000);
+        }, 64000);
 
-//         setInterval(() => {
-//             new Guardian(game);
-//             new AbstractBoss(game);
-//             new FallenSpikeBoss(game);
-// //             new Summoner(game);
-//             new FallenMegaTrapper(game);
-//             new FallenAC(game);
-//             new FallenBooster(game);
-//             new FallenOverlord(game);
-//             new FallenSpike(game);
-//         }, 8000)
+        setInterval(() => {
+            new Guardian(game);
+            new AbstractBoss(game);
+            new FallenSpikeBoss(game);
+//             new Summoner(game);
+            new FallenMegaTrapper(game);
+            new FallenAC(game);
+            new FallenBooster(game);
+            new FallenOverlord(game);
+            new FallenSpike(game);
+        }, 8000)
 
         // const tank1 = this.spawnTestTank(Tank.Booster);
         // const tank2 = this.spawnTestTank(Tank.Annihilator);

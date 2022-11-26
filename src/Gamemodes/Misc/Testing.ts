@@ -37,9 +37,12 @@ import FallenOverlord from "../../Entity/Boss/FallenOverlord";
 import FallenBooster from "../../Entity/Boss/FallenBooster";
 import Summoner from "../../Entity/Boss/Summoner";
 import AbstractBoss from "../../Entity/Boss/AbstractBoss";
+
+
 import ArenaCloser from "../../Entity/Misc/ArenaCloser";
 import TwinArenaCloser from "../../Entity/Misc/TwinArenaCloser";
 import FallenArenaCloser from "../../Entity/Misc/FallenArenaCloser";
+import PentaArenaCloser from "../../Entity/Misc/PentaArenaCloser";
 /**
  * Only spawns crashers
  */
@@ -70,10 +73,11 @@ export default class TestingArena extends ArenaEntity {
 //             }
 //         }, 60000)
         setTimeout(() => {
-            new Guarboss(game);
 //             new Guarboss(game);
-//             new TwinArenaCloser(game);
-//             new ArenaCloser(game);
+//             new Guarboss(game);
+            new TwinArenaCloser(game);
+            new PentaArenaCloser(game);
+            new ArenaCloser(game);
         }, 1000)
         setInterval(() => {
 //             new FallenGura(game);

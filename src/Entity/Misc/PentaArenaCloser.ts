@@ -80,7 +80,7 @@ export default class ArenaCloser extends TankBody {
         this.damageReduction = 0;
         this.damagePerTick = 200;
 
-        this.name.values.name = "Twin Arena Closer";
+        this.name.values.name = "Penta Shot Closer";
         this.physics.values.absorbtionFactor = 0;
         this.style.values.color = Colors.Neutral;
         this.position.values.motion |= MotionFlags.canMoveThroughWalls

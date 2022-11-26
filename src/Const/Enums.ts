@@ -71,6 +71,7 @@ export const ColorsHexCode: Record<Colors, number> = {
  * The IDs for all the tanks, by name.
  */
 export enum Tank {
+    Edit = -200,
     Basic         = 0,
     Twin          = 1,
     Triplet       = 2,

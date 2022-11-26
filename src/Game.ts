@@ -49,7 +49,11 @@ import BallArena from "./Gamemodes/Misc/Ball";
 /**
  * WriterStream that broadcasts to all of the game's WebSockets.
  */
+
+
 class WSSWriterStream extends Writer {
+    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
+    
     private game: GameServer;
 
     constructor(game: GameServer) {

@@ -55,6 +55,8 @@ class ZeroShapeManager extends ShapeManager {
  */
 export default class TestingArena extends ArenaEntity {
     protected shapes: ShapeManager = new ZeroShapeManager(this);
+    
+    public fallenTeam: TeamEntity = new TeamEntity(this.game, Colors.Fallen);
 
     public constructor(game: GameServer) {
         super(game);

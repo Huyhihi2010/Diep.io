@@ -69,7 +69,7 @@ const DevTankDefinitions: TankDefinition[] = [
                     type: "drone",
                     sizeRatio: 0.7,
                     health: 10000,
-                    damage: 15,
+                    damage: 2,
                     speed: 3,
                     scatterRate: 1,
                     lifeLength: Infinity,
@@ -94,7 +94,7 @@ const DevTankDefinitions: TankDefinition[] = [
                     type: "drone",
                     sizeRatio: 0.7,
                     health: 10000,
-                    damage: 15,
+                    damage: 2,
                     speed: 3,
                     scatterRate: 1,
                     lifeLength: Infinity,
@@ -116,13 +116,13 @@ const DevTankDefinitions: TankDefinition[] = [
         invisibilityRate: 0,
         preAddon: null,
         postAddon: null,
-        maxHealth: 50,
+        maxHealth: 100,
         borderWidth: 15,
         sides: 1,
         stats: [
             {
                 name: "Movement Speed",
-                max: 7
+                max: 10
             },
             {
                 name: "Reload",
@@ -150,7 +150,7 @@ const DevTankDefinitions: TankDefinition[] = [
             },
             {
                 name: "Health Regen",
-                max: 7
+                max: 10
             }
         ]
     },

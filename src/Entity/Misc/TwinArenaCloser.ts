@@ -55,7 +55,7 @@ export default class ArenaCloser extends TankBody {
 
         this.health.values.healthbar |= HealthbarFlags.hidden;
 
-        this.setTank(Tank.Twin);
+//         this.setTank(Tank.Twin);
 
         const def = (this.definition = Object.assign({}, this.definition));
         def.maxHealth = 10000;
@@ -75,6 +75,14 @@ export default class ArenaCloser extends TankBody {
         for (let i = Stat.MovementSpeed; i < Stat.BodyDamage; ++i) camera.camera.values.statLevels.values[i] = 7;
 
         this.ai.aimSpeed = this.barrels[0].bulletAccel * 1.6;
+        
+        for (const barrelDefinition of TankDefinitions[Tank.Twin].barrels) {
+
+            const def = Object.assign({}, barrelDefinition, { reload: 1 });
+            def.bullet = Object.assign({}, def.bullet, { sizeRatio: 1, speed: 2, damage: 7, health: 500 });
+            this.barrels.push(new Barrel(this, def));
+        }
+        
         for(var i = 0; i < this.barrels.length; i++) {
             this.barrels[i].sizeRatio = 1;
             this.barrels[i].health = 500;

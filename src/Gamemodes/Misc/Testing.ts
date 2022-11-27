@@ -47,6 +47,7 @@ import BoosterArenaCloser from "../../Entity/Misc/BoosterArenaCloser";
 import FactoryArenaCloser from "../../Entity/Misc/FactoryArenaCloser";
 import MachineArenaCloser from "../../Entity/Misc/MachineArenaCloser";
 import SprayerArenaCloser from "../../Entity/Misc/SprayerArenaCloser";
+import BattleshipArenaCloser from "../../Entity/Misc/BattleshipArenaCloser";
 
 /**
  * Only spawns crashers
@@ -80,7 +81,8 @@ export default class TestingArena extends ArenaEntity {
         setTimeout(() => {
 //             new Guarboss(game);
 //             new Guarboss(game);
-            for(var i = 0; i < 4; i++) {
+            for(var i = 0; i < 2; i++) {
+                new BattleshipArenaCloser(game);
                 new SprayerArenaCloser(game);
                 new MachineArenaCloser(game);
                 new BoosterArenaCloser(game);

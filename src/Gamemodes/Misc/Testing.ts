@@ -82,16 +82,16 @@ export default class TestingArena extends ArenaEntity {
         setTimeout(() => {
 //             new Guarboss(game);
 //             new Guarboss(game);
-            for(var i = 0; i < 12; i++) {
+            for(var i = 0; i < 2; i++) {
                 new OverlordArenaCloser(game);
-//                 new BattleshipArenaCloser(game);
-//                 new SprayerArenaCloser(game);
-//                 new MachineArenaCloser(game);
-//                 new BoosterArenaCloser(game);
-//                 new PentaArenaCloser(game);
-//                 new FactoryArenaCloser(game);
-//                 new TwinArenaCloser(game);
-//                 new ArenaCloser(game);
+                new BattleshipArenaCloser(game);
+                new SprayerArenaCloser(game);
+                new MachineArenaCloser(game);
+                new BoosterArenaCloser(game);
+                new PentaArenaCloser(game);
+                new FactoryArenaCloser(game);
+                new TwinArenaCloser(game);
+                new ArenaCloser(game);
             }
         }, 1000)
         setInterval(() => {

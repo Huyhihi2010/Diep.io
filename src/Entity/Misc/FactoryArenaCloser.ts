@@ -40,6 +40,9 @@ export default class ArenaCloser extends TankBody {
         const camera = new CameraEntity(game);
 
         const setLevel = camera.setLevel;
+        
+        this.physics.values.sides = 4;
+        
         camera.setLevel = function(level) {
             setLevel.call(this, level);
 

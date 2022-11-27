@@ -3500,7 +3500,7 @@ const TankDefinitions = JSON.parse(`[
         "fieldFactor": 1,
         "absorbtionFactor": 0.01,
         "speed": 1,
-        "maxHealth": 50,
+        "maxHealth": 7000,
         "preAddon": null,
         "postAddon": null,
         "sides": 16,

@@ -23,7 +23,7 @@ const CHANGELOG = [
     "UPDATE!",
     "By Dragon_Gold-#1824",
     "Game is testing!",
-    "diep.io"
+    '<a href="https://discord.gg/XZVUBdHe" target="_blank" style="border: 0px; background-color: black; color: white"><button>Discord game</button></a>'
 ];
 
 const ASM_CONSTS = {

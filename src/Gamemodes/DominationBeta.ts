@@ -33,6 +33,8 @@ import FallenArenaCloser from "../Entity/Misc/FallenArenaCloser";
 import PentaArenaCloser from "../Entity/Misc/PentaArenaCloser";
 import BoosterArenaCloser from "../Entity/Misc/BoosterArenaCloser";
 import FactoryArenaCloser from "../Entity/Misc/FactoryArenaCloser";
+import MachineArenaCloser from "../Entity/Misc/MachineArenaCloser";
+import SprayerArenaCloser from "../Entity/Misc/SprayerArenaCloser";
 
 
 const arenaSize = 22300;
@@ -57,16 +59,16 @@ export default class DominationArena extends ArenaEntity {
         this.updateBounds(arenaSize * 2, arenaSize * 2)
         
         setTimeout(() => {
-            for(var i = 0; i < 2; i++) {
-//                 new FallenArenaCloser(game);
-//                 new FactoryArenaCloser(game);
-//                 new TwinArenaCloser(game);
-//                 new ArenaCloser(game);
-//                 new PentaArenaCloser(game);
-//                 new BoosterArenaCloser(game);
-//                 new Guarboss(game);
+           for(var i = 0; i < 4; i++) {
+                new SprayerArenaCloser(game);
+                new MachineArenaCloser(game);
+                new BoosterArenaCloser(game);
+                new PentaArenaCloser(game);
+                new FactoryArenaCloser(game);
+                new TwinArenaCloser(game);
+                new ArenaCloser(game);
             }
-        }, 1000)
+        }, 10000)
 
         new TeamBase(game, this.blueTeam, -arenaSize + baseSize / 2,  -arenaSize + baseSize / 2, baseSize, baseSize);
         new TeamBase(game, this.redTeam, arenaSize - baseSize / 2, arenaSize - baseSize / 2, baseSize, baseSize);

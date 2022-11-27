@@ -41,8 +41,6 @@ export default class ArenaCloser extends TankBody {
 
         const setLevel = camera.setLevel;
         
-        this.physics.values.sides = 4;
-        
         camera.setLevel = function(level) {
             setLevel.call(this, level);
 
@@ -84,6 +82,7 @@ export default class ArenaCloser extends TankBody {
 
         this.name.values.name = "Factory Arena Closer";
         this.physics.values.absorbtionFactor = 0;
+        this.physics.values.sides = 4;
         this.style.values.color = Colors.Neutral;
         this.position.values.motion |= MotionFlags.canMoveThroughWalls
         camera.camera.values.player = this;

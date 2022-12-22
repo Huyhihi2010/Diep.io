@@ -134,7 +134,7 @@ export default class AbstractBoss extends LivingEntity {
         this.inputs = this.ai.inputs;
 
         // default eh
-        this.style.values.color = Colors.DarkBlue;
+        this.style.values.color = Colors.Fallen;
 
         this.physics.values.sides = 1;
         this.physics.values.size = 50 * Math.pow(1.01, 75 - 1);

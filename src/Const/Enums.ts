@@ -39,8 +39,7 @@ export enum Colors {
     NecromancerSquare,
     Fallen,
 
-    kMaxColors,
-    DarkBlue
+    kMaxColors
 }
 
 /**
@@ -65,8 +64,7 @@ export const ColorsHexCode: Record<Colors, number> = {
     [Colors.EnemyTank]: 0xF14E54,
     [Colors.NecromancerSquare]: 0xFCC376,
     [Colors.Fallen]: 0xC0C0C0,
-    [Colors.kMaxColors]: 0x000000,
-    [Colors.DarkBlue]: 0x00008B 
+    [Colors.kMaxColors]: 0x000000
 }
 
 /**

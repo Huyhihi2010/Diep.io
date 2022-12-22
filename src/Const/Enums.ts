@@ -39,7 +39,8 @@ export enum Colors {
     NecromancerSquare,
     Fallen,
 
-    kMaxColors
+    kMaxColors,
+    DarkBlue
 }
 
 /**

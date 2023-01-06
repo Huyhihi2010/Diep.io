@@ -124,7 +124,8 @@ export enum Tank {
     Factory       = 52,
     nullTank      = 53,
     Skimmer       = 54,
-    Rocketeer     = 55
+    Rocketeer     = 55,
+    Trapper6      = 56
 }
 
 /**

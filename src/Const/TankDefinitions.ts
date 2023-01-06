@@ -4703,7 +4703,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 56,
+        "id": 36,
         "name": "Trapper6",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -4894,7 +4894,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 36,
+        "id": 37,
         "name": "Smasher",
         "upgradeMessage": "",
         "levelRequirement": 30,
@@ -4957,7 +4957,7 @@ const TankDefinitions = JSON.parse(`[
     },
     null,
     {
-        "id": 38,
+        "id": 39,
         "name": "Landmine",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -5015,7 +5015,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 39,
+        "id": 40,
         "name": "Auto Gunner",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -5162,7 +5162,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 40,
+        "id": 41,
         "name": "Auto 5",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -5220,7 +5220,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 41,
+        "id": 42,
         "name": "Auto 3",
         "upgradeMessage": "",
         "levelRequirement": 30,
@@ -5281,7 +5281,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 42,
+        "id": 43,
         "name": "Spread Shot",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -5582,7 +5582,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 43,
+        "id": 44,
         "name": "Streamliner",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -5751,7 +5751,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 44,
+        "id": 45,
         "name": "Auto Trapper",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -5832,7 +5832,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 45,
+        "id": 46,
         "name": "Dominator",
         "upgradeMessage": "",
         "levelRequirement": 0,
@@ -5913,7 +5913,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 46,
+        "id": 47,
         "name": "Dominator",
         "upgradeMessage": "",
         "levelRequirement": 0,
@@ -6038,7 +6038,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 47,
+        "id": 48,
         "name": "Dominator",
         "upgradeMessage": "",
         "levelRequirement": 0,
@@ -6281,7 +6281,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 48,
+        "id": 49,
         "name": "Battleship",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -6436,7 +6436,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 49,
+        "id": 50,
         "name": "Annihilator",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -6517,7 +6517,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 50,
+        "id": 51,
         "name": "Auto Smasher",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -6575,7 +6575,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 51,
+        "id": 52,
         "name": "Spike",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -6633,7 +6633,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 52,
+        "id": 53,
         "name": "Factory",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -6716,7 +6716,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 53,
+        "id": 54,
         "name": "nullTank",
         "upgradeMessage": "",
         "levelRequirement": 0,
@@ -6774,7 +6774,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 54,
+        "id": 55,
         "name": "Skimmer",
         "upgradeMessage": "",
         "levelRequirement": 45,
@@ -6855,7 +6855,7 @@ const TankDefinitions = JSON.parse(`[
         ]
     },
     {
-        "id": 55,
+        "id": 56,
         "name": "Rocketeer",
         "upgradeMessage": "",
         "levelRequirement": 45,

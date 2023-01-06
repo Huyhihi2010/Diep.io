@@ -106,6 +106,7 @@ export enum Tank {
     Overtrapper   = 33,
     MegaTrapper   = 34,
     TriTrapper    = 35,
+    Trapper6      = 56,
     Smasher       = 36,
     Landmine      = 37,
     AutoGunner    = 39,
@@ -124,8 +125,7 @@ export enum Tank {
     Factory       = 52,
     nullTank      = 53,
     Skimmer       = 54,
-    Rocketeer     = 55,
-    Trapper6      = 56
+    Rocketeer     = 55
 }
 
 /**
